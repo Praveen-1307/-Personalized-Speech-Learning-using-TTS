@@ -1,0 +1,45 @@
+{
+  "profile_id": "dc0a489a9846",
+  "user_id": "my_voice",
+  "features": {
+    "prosodic": {
+      "f0_mean": 203.26309916212762,
+      "f0_std": 45.67268070626139,
+      "energy_mean": 0.5276646536588668,
+      "energy_std": 0.4818809342384338
+    },
+    "speaking_pattern": {
+      "words_per_minute": 150.0,
+      "syllables_per_second": 3.75,
+      "rhythm_entropy": 0.9172221044292493
+    },
+    "emotion": {
+      "pitch_mean": 203.26309916212762,
+      "pitch_std": 45.67268070626139,
+      "pitch_range": 258.2899119672725,
+      "energy_mean": 0.5276646536588668,
+      "energy_std": 0.4818809342384338,
+      "speaking_rate": 1.0264414909071964
+    },
+    "spectral": {
+      "spectral_centroid_mean": 2634.8308836663573
+    },
+    "metadata": {
+      "processing_time": 0.5071864748001098,
+      "audio_duration": 6.151430385487531,
+      "sample_rate": 22050.0
+    },
+    "emotion_detected": {
+      "emotion": "neutral",
+      "confidence": 1.0
+    }
+  },
+  "model_info": {
+    "method": "gmm",
+    "n_samples": 50,
+    "training_time": 1770098948.0912964
+  },
+  "created_at": "2026-02-03T11:39:08.091296",
+  "updated_at": "2026-02-03T11:39:08.091296",
+  "version": 1
+}

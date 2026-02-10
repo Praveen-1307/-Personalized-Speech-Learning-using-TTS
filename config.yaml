@@ -1,0 +1,92 @@
+# Personalization Engine Configuration
+
+# Audio Processing
+audio:
+  target_sample_rate: 22050
+  min_duration_seconds: 5.0
+  max_duration_seconds: 30.0
+  normalization_level_db: -3
+  noise_reduction_enabled: true
+  silence_removal_enabled: true
+
+# Feature Extraction
+features:
+  f0_extraction_method: "world"  # world, pyin, praat
+  energy_frame_length: 2048
+  energy_hop_length: 512
+  mfcc_coefficients: 20
+  spectral_features: true
+  temporal_features: true
+
+# Pattern Learning
+pattern_learning:
+  method: "gmm"  # gmm, neural, svm
+  gmm_components: 8
+  neural_epochs: 100
+  neural_hidden_dim: 64
+
+# Emotion Detection
+emotion:
+  enabled: true
+  model_type: "svm"  # svm, random_forest, neural
+  emotions: ["neutral", "happy", "sad", "angry", "calm"]
+  training_data_path: "./data/emotion_training"
+
+# Profile Management
+profiles:
+  storage_format: "both"  # json, yaml, both, pkl
+  storage_directory: "./profiles"
+  auto_backup: true
+  max_profiles: 1000
+  compression_enabled: false
+
+# Piper TTS Integration
+piper_tts:
+  model_path: "./models/piper"
+  voice_models:
+    - "en_US-amy-low"
+    - "en_US-lessac-medium"
+  integration_mode: "adapter"  # adapter, fine_tune, plugin
+  use_gpu: true
+  batch_size: 16
+
+# Qwen TTS Integration
+qwen_tts:
+  model_id: "Qwen/Qwen3-TTS-12Hz-0.6B-Base"
+  use_gpu: false
+  
+# TTS Selection
+tts_engine: "qwen" # Options: "piper", "qwen"
+
+# Logging
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  file_enabled: true
+  file_path: "./logs/tts_engine.log"
+  console_enabled: true
+  log_format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  performance_logging: true
+
+# API Server
+api:
+  enabled: true
+  host: "0.0.0.0"
+  port: 8000
+  workers: 4
+  cors_enabled: true
+  rate_limit: "100/minute"
+
+# CLI Interface
+cli:
+  rich_display: true
+  progress_bars: true
+  color_output: true
+  interactive_mode: true
+
+# Performance Optimization
+performance:
+  use_multiprocessing: true
+  max_workers: 4
+  cache_enabled: true
+  cache_size_mb: 100
+  preload_profiles: false

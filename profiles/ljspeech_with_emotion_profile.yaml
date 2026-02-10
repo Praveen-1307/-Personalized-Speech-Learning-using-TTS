@@ -1,0 +1,50 @@
+created_at: '2026-02-02T23:14:54.981124'
+features:
+  emotion:
+    energy_mean: 0.5276646536588668
+    energy_std: 0.4818809342384338
+    pitch_mean: 203.26309916212762
+    pitch_range: 258.2899119672725
+    pitch_std: 45.67268070626139
+    speaking_rate: 1.0264414909071964
+  emotion_detected:
+    confidence: 1.0
+  metadata:
+    audio_duration: 6.151430385487531
+    processing_time: 0.5593230056762696
+    sample_rate: 22050.0
+  prosodic:
+    energy_mean: 0.5276646536588668
+    energy_std: 0.4818809342384338
+    f0_mean: 203.26309916212762
+    f0_std: 45.67268070626139
+  speaking_pattern:
+    rhythm_entropy: !!python/object/apply:numpy.core.multiarray.scalar
+    - !!python/object/apply:numpy.dtype
+      args:
+      - f8
+      - false
+      - true
+      state: !!python/tuple
+      - 3
+      - <
+      - null
+      - null
+      - null
+      - -1
+      - -1
+      - 0
+    - !!binary |
+      OyS2K+JZ7T8=
+    syllables_per_second: 3.75
+    words_per_minute: 150.0
+  spectral:
+    spectral_centroid_mean: 2634.8308836663573
+model_info:
+  method: gmm
+  n_samples: 50
+  training_time: 1770054294.9811246
+profile_id: b744f5c2aa5e
+updated_at: '2026-02-02T23:14:54.981124'
+user_id: ljspeech_with_emotion
+version: 1
