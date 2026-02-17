@@ -8,7 +8,8 @@ A comprehensive Python-based personalization engine that extends Piper TTS. It a
 2.  **Iterative Synthesis**: Record your voice once and generate multiple speech segments without re-recording.
 3.  **Real-Time Voice Profiling**: Automatically extracts Pitch (F0), Stress (RMS Energy), and Emotion from recorded samples.
 4.  **JSON Metadata Generation**: Every generated audio file is accompanied by a matching `.json` file containing the source voice's characteristics.
-5.  **Windows Optimized**: Custom PyTorch-based adapter for Windows environments (alternative to MLX).
+5.  **Real-time Monitoring**: Centralized logging system with beautiful console output (via Rich) and persistent file logging.
+6.  **Windows Optimized**: Custom PyTorch-based adapter for Windows environments (alternative to MLX).
 
 ##  Quick Start
 
@@ -31,6 +32,14 @@ python run_qwen_interactive.py
 3.  **Clone**: Enter text repeatedly to hear it in your voice.
 4.  **Save**: Outputs and matching metadata are saved to the `output/` folder.
 
+### 3. Monitoring & Logs
+The system now features real-time logging. To view the persistent history:
+```bash
+# View the application log
+cat logs/app.log
+```
+Logs are also displayed in real-time in the terminal with color coding.
+
 
 ##  Project Structure
 
@@ -42,9 +51,9 @@ python run_qwen_interactive.py
 *   `synthesize_voice.py`: Main synthesis entry point.
 
 ##  Documentation
-*   [Dataset Analysis](DATASET_ANALYSIS.md)
-*   [System Architecture](ARCHITECTURE.md)
-*   [Operational & Logging Guide](OPERATIONS.md)
-*   [Logging Specification](LOGS.md)
-*   [Changelog](CHANGELOG.md)
+*   [Dataset Analysis](docs/DATASET_ANALYSIS.md)
+*   [System Architecture](docs/ARCHITECTURE.md)
+*   [Operational & Logging Guide](docs/OPERATIONS.md)
+*   [Logging Specification](docs/LOGS.md)
+*   [Changelog](docs/CHANGELOG.md)
 

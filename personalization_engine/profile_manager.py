@@ -8,7 +8,8 @@ from datetime import datetime
 import pickle
 import numpy as np
 
-logger = logging.getLogger(__name__)
+from personalization_engine.logger import get_logger
+logger = get_logger(__name__)
 
 class VoiceProfileManager:
     def __init__(self, storage_dir: str = "./profiles"):

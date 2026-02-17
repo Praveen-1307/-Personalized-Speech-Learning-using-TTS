@@ -7,8 +7,8 @@ import argparse
 from pathlib import Path
 from personalization_engine.synthesis_adapter import SynthesisAdapter
 
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
+from personalization_engine.logger import setup_logger
+logger = setup_logger("synthesize_voice")
 
 def main():
     parser = argparse.ArgumentParser(description="Synthesize text using a personalized profile.")

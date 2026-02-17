@@ -47,12 +47,20 @@ Key variables in `config.yaml` or `run_qwen_interactive.py`:
 | **"Audio contains noise"** | Mic Quality | Record in a quiet room; use a higher quality mic for better zero-shot cloning. |
 | **"ImportError: transformers"** | Version Mismatch | Run `pip install transformers>=4.57.3`. |
 
-## 5. Performance Metrics
+## 5. Performance & Monitoring
 
 The interactive console provides real-time feedback:
 *   **Loading Status**: Spinner indicating model weights transfer.
+*   **Real-time Logs**: Aesthetic, color-coded logs showing background processing steps.
 *   **Synthesis Time**: Displayed after each generation.
 *   **JSON Link**: Direct path to the metadata fingerprint.
+*   **Persistent Trails**: Check `logs/app.log` for a complete history of the execution.
+
+### Viewing Logs in Real-time (Windows)
+To watch logs in a separate PowerShell window while you run the program:
+```powershell
+Get-Content logs/app.log -Wait
+```
 
 ## 6. Cleanup
 To clear old results without breaking the system:

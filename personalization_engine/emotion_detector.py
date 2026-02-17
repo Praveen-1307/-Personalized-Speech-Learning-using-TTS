@@ -7,7 +7,8 @@ from sklearn.ensemble import RandomForestClassifier
 import joblib
 import librosa
 
-logger = logging.getLogger(__name__)
+from personalization_engine.logger import get_logger
+logger = get_logger(__name__)
 
 class EmotionDetector:
     # Emotion categories based on research

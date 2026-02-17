@@ -1,12 +1,22 @@
 # Logging & Metadata Specification
 
 ## Overview
-The Qwen3-TTS engine implements a dual-stream logging system:
-1.  **Console/System Logs**: Records internal operations (model loading, GPU state, synthesis time).
-2.  **Product Metadata (JSON)**: Every voice clone generates a permanent analytical record of the voice's physical characteristics.
+The personalization engine implements a multi-tier logging system:
+1.  **Rich Console Stream**: Real-time, color-coded diagnostic logs for immediate feedback.
+2.  **Persistent File Log**: Holistic record of all session activity saved to `logs/app.log`.
+3.  **Product Metadata (JSON)**: Analytical record of specific voice characteristics for every clone.
 
-## 1. Metadata Generation (JSON)
-Each synthesis produces a JSON file containing the "Voice DNA".
+## 1. Centralized Logging System
+The system uses a custom logging module (`personalization_engine/logger.py`) to ensure consistency across all components.
+
+### Console Output (Rich)
+*   **Levels**: INFO for standard operations, DEBUG for technical details, WARNING/ERROR for issues.
+*   **Features**: Includes timestamps, stylized levels, and automatic traceback formatting for crashes.
+
+### File Logging (Rotating)
+*   **Path**: `logs/app.log`
+*   **Retention**: Keeps up to 5 historical copies, each capped at 10MB.
+*   **Verbosity**: Always captures DEBUG level information for comprehensive troubleshooting.
 
 **Example Layout (`cloned_1770739260.json`):**
 ```json

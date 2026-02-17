@@ -9,7 +9,8 @@ from scipy import stats
 import matplotlib.pyplot as plt
 import time
 
-logger = logging.getLogger(__name__)
+from personalization_engine.logger import get_logger
+logger = get_logger(__name__)
 
 @dataclass
 class SpeakingPattern:

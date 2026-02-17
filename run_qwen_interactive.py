@@ -16,8 +16,8 @@ from rich.progress import Progress, SpinnerColumn, TextColumn
 from personalization_engine.qwen_adapter import load_model, generate_audio
 
 # Configure logging
-logging.basicConfig(level=logging.ERROR)
-logger = logging.getLogger("qwen_interactive")
+from personalization_engine.logger import setup_logger
+logger = setup_logger("qwen_interactive")
 
 console = Console()
 
@@ -62,6 +62,7 @@ def main():
     profile_dir = Path("profiles")
     profile_dir.mkdir(exist_ok=True)
     ref_audio_path = profile_dir / f"{user_id}.wav"
+    logger.info(f"Initialized session for user: {user_id}")
     
     # 2. Record or Use Existing
     if not ref_audio_path.exists() or Confirm.ask("Do you want to record a new voice reference?", default=True):
@@ -70,6 +71,7 @@ def main():
         
         if audio_data is not None:
             sf.write(str(ref_audio_path), audio_data, sr)
+            logger.info(f"Reference audio saved to {ref_audio_path}")
             console.print(f"[green]Reference audio saved to {ref_audio_path}[/green]")
         else:
             console.print("[red]Recording failed. Exiting.[/red]")
@@ -98,7 +100,9 @@ def main():
 
     try:
         with console.status("[bold green]Loading model...[/bold green]"):
+            logger.info(f"Loading Qwen TTS model: {model_id}")
             model = load_model(model_id)
+        logger.info("Model loaded successfully")
         console.print("[bold green]Model loaded successfully![/bold green]")
     except Exception as e:
         console.print(f"[bold red]Failed to load model:[/bold red] {e}")
@@ -126,7 +130,9 @@ def main():
 
     # Initial analysis of recorded voice
     with console.status("[bold blue]Analyzing recorded voice...[/bold blue]"):
+        logger.info("Starting initial voice analysis")
         ref_metadata = get_voice_metadata(ref_audio_path)
+        logger.info(f"Initial analysis complete. Detected emotion: {ref_metadata.get('emotion', 'unknown')}")
 
     # 4. Interactive Synthesis Loop
     console.print("\n[bold green]Ready for synthesis![/bold green]")
@@ -168,6 +174,7 @@ def main():
                 }
                 with open(json_path, 'w') as f:
                     json.dump(metadata, f, indent=4)
+                logger.info(f"Metadata written to {json_path}")
                 
             console.print(f"✅ [green]Generated:[/green] [white]{output_path}[/white]")
             console.print(f"📄 [dim]Metadata saved to: {json_path}[/dim]")

@@ -15,7 +15,8 @@ except ImportError as e:
     Qwen3TTSModel = None
     Qwen3TTSTokenizer = None
 
-logger = logging.getLogger(__name__)
+from personalization_engine.logger import get_logger
+logger = get_logger(__name__)
 
 # Compatibility wrapper for the MLX-style API on Windows
 def load_model(model_id: str, device: str = None):
