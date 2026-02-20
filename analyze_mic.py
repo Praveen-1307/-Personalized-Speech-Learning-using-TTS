@@ -14,6 +14,9 @@ from rich.text import Text
 from personalization_engine.feature_extractor import FeatureExtractor
 from personalization_engine.emotion_detector import EmotionDetector
 
+from personalization_engine.logger import setup_logger
+logger = setup_logger("analyze_mic")
+
 console = Console()
 
 @click.command()
@@ -22,6 +25,7 @@ console = Console()
 def record_analyze(duration, sample_rate):
     """Record microphone input and analyze voice immediately."""
     
+    logger.info(f"Starting microphone recording: duration={duration}s, sample_rate={sample_rate}")
     console.print(Panel.fit(f"[bold cyan]Recording for {duration} seconds...[/bold cyan]\n[yellow]Speak naturally![/yellow]"))
     
     # 1. Record Audio
@@ -35,6 +39,7 @@ def record_analyze(duration, sample_rate):
                 live.update(Text(f"Recording... {duration - i - 1}s remaining", style="red"))
                 
         sd.wait()
+        logger.info("Recording complete")
         console.print("[green]Recording complete![/green]")
         
         # Flatten to 1D array
@@ -61,9 +66,11 @@ def record_analyze(duration, sample_rate):
     emotion_detector = EmotionDetector()
     
     with console.status("Extracting features..."):
+        logger.info("Extracting voice features")
         # Features
         features = extractor.extract_all_features(audio_data)
         
+        logger.info("Detecting emotion")
         # Emotion
         emotion_result = emotion_detector.detect(audio_data)
     
