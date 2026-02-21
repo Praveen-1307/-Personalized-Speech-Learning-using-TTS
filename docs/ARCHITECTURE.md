@@ -1,6 +1,6 @@
 # System Architecture
 
-The TTS Personalization Engine is a high-performance voice cloning pipeline. Originally based on Piper TTS, it has been evolved into a sophisticated **Zero-Shot Voice Cloning** system powered by the **Qwen3-TTS** model. It enables real-time extraction of user-specific speech patterns and emotions, coupling them with large-scale pre-trained models for state-of-the-art synthesis.
+The TTS Personalization Engine is a high-performance voice cloning pipeline powered by the **Qwen3-TTS** model. It enables real-time extraction of user-specific speech patterns and emotions, coupling them with large-scale pre-trained models for state-of-the-art zero-shot voice cloning.
 
 ## High-Level Architecture
 

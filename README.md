@@ -1,6 +1,6 @@
- Personalized TTS Engine (Piper Integration)
+ Personalized TTS Engine (Qwen3-TTS Integration)
 
-A comprehensive Python-based personalization engine that extends Piper TTS. It analyzes user audio to extract speaking patterns, pitch, and emotion, creating a personalized voice profile for synthesis.
+A comprehensive Python-based personalization engine powered by Qwen3-TTS. It analyzes user audio to extract speaking patterns, pitch, and emotion, creating a personalized voice profile for zero-shot voice cloning and synthesis.
 
 ##  Key Features
 
@@ -48,7 +48,9 @@ Logs are also displayed in real-time in the terminal with color coding.
     *   `pattern_learner.py`: Statistical profiling (GMM).
     *   `emotion_detector.py`: SVM Classifier for native emotion recognition.
 *   `profiles/`: Stored user profiles (`.json`, `.pkl`).
-*   `synthesize_voice.py`: Main synthesis entry point.
+*   `run_qwen_interactive.py`: Primary interactive voice cloning entry point.
+*   `synthesize_voice.py`: Alternative CLI synthesis script.
+*   `generate_validation_report.py`: Tool for quality assurance and reporting.
 
 ##  Documentation
 *   [Dataset Analysis](docs/DATASET_ANALYSIS.md)
