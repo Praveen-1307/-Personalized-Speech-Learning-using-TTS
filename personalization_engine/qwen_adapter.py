@@ -15,10 +15,11 @@ except ImportError as e:
     Qwen3TTSModel = None
     Qwen3TTSTokenizer = None
 
-from personalization_engine.logger import get_logger
+from personalization_engine.logger import get_logger, log_execution_details, log_complexity, log_system_metrics
 logger = get_logger(__name__)
 
 # Compatibility wrapper for the MLX-style API on Windows
+@log_execution_details
 def load_model(model_id: str, device: str = None):
     """Load Qwen3 TTS model for Windows."""
     if Qwen3TTSModel is None:
@@ -36,38 +37,101 @@ def load_model(model_id: str, device: str = None):
     elif hasattr(model, 'model') and hasattr(model.model, 'to'):
         model.model.to(device)
     
+    # Log model parameters
+    num_params = sum(p.numel() for p in model.parameters()) if hasattr(model, 'parameters') else None
+    params_str = f"{num_params:,}" if num_params is not None else "Unknown"
+    logger.info(f"[ModelMetadata] Loaded {model_id} | Parameters: {params_str} | Device: {device}")
+    log_complexity("QwenModel", "O(L * D^2)", "O(L * D)") # L=length, D=dim
+    
     return model
 
+import re
+
+def split_text_into_chunks(text: str, max_chars: int = 400) -> List[str]:
+    """Split text into manageable chunks for TTS based on sentence boundaries."""
+    # Split by period, exclamation, or question mark followed by space
+    sentences = re.split(r'(?<=[.!?])\s+', text)
+    chunks = []
+    current_chunk = ""
+    
+    for sentence in sentences:
+        if len(current_chunk) + len(sentence) <= max_chars:
+            current_chunk += (sentence + " ")
+        else:
+            if current_chunk:
+                chunks.append(current_chunk.strip())
+            
+            # If a single sentence is longer than max_chars, split it by logical breaks
+            if len(sentence) > max_chars:
+                # Fallback: split by commas if sentence is too long
+                sub_sentences = re.split(r'(?<=,)\s+', sentence)
+                sub_chunk = ""
+                for ss in sub_sentences:
+                    if len(sub_chunk) + len(ss) <= max_chars:
+                        sub_chunk += (ss + " ")
+                    else:
+                        if sub_chunk:
+                            chunks.append(sub_chunk.strip())
+                        sub_chunk = ss + " "
+                current_chunk = sub_chunk
+            else:
+                current_chunk = sentence + " "
+            
+    if current_chunk:
+        chunks.append(current_chunk.strip())
+        
+    return [c for c in chunks if c.strip()]
+
+@log_execution_details
 def generate_audio(model, text: str, ref_audio: str, file_prefix: str = "output"):
-    """Generate audio using Qwen TTS (Windows compatible)."""
+    """Generate audio using Qwen TTS with automatic chunking for long texts."""
+    log_system_metrics(logger)
+    log_complexity("QwenInference", "O(Tokens * Model_Size)", "O(K_V_Cache)")
+    
     if not os.path.exists(ref_audio):
         raise FileNotFoundError(f"Reference audio not found: {ref_audio}")
         
-    logger.info(f"Generating audio for text: {text}")
+    # Split text into manageable chunks (e.g., 400 characters ~ 60-80 words)
+    chunks = split_text_into_chunks(text)
+    logger.info(f"Processing text in {len(chunks)} chunks")
     
-    # Qwen3TTSModel.generate_voice_clone returns (wavs, sample_rate)
-    # wavs is typically a list of numpy arrays
-    output = model.generate_voice_clone(
-        text=text,
-        ref_audio=ref_audio,
-        x_vector_only_mode=True
-    )
-    
-    audio_data = None
+    all_audio = []
     sample_rate = 24000
     
-    if isinstance(output, tuple):
-        wavs, sample_rate = output[0], output[1]
-        if isinstance(wavs, list) and len(wavs) > 0:
-            audio_data = wavs[0]
-        else:
-            audio_data = wavs
-    else:
-        audio_data = output
+    for i, chunk in enumerate(chunks):
+        logger.info(f"Synthesizing chunk {i+1}/{len(chunks)}: {chunk[:50]}...")
         
+        # model.generate_voice_clone returns (wavs, sample_rate)
+        output = model.generate_voice_clone(
+            text=chunk,
+            ref_audio=ref_audio,
+            x_vector_only_mode=True
+        )
+        
+        if isinstance(output, tuple):
+            wavs, sr = output[0], output[1]
+            sample_rate = sr
+            if isinstance(wavs, list) and len(wavs) > 0:
+                chunk_audio = wavs[0]
+            else:
+                chunk_audio = wavs
+        else:
+            chunk_audio = output
+            
+        if chunk_audio is not None:
+            all_audio.append(chunk_audio)
+            log_system_metrics(logger)
+            
+    if not all_audio:
+        raise RuntimeError("Synthesis failed to produce any audio chunks.")
+        
+    # Concatenate all chunks
+    combined_audio = np.concatenate(all_audio)
+    
     output_path = f"{file_prefix}.wav"
-    sf.write(output_path, audio_data, sample_rate)
-    logger.info(f"Saved audio to {output_path}")
+    sf.write(output_path, combined_audio, sample_rate)
+    logger.info(f"Saved concatenated audio to {output_path}")
+    log_system_metrics(logger)
     return output_path
 
 class QwenAdapter:

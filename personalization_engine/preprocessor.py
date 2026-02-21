@@ -8,7 +8,8 @@ from pydub import AudioSegment, effects
 import noisereduce as nr
 import time
 
-logger = logging.getLogger(__name__)
+from personalization_engine.logger import get_logger, log_execution_details, log_complexity
+logger = get_logger(__name__)
 
 class AudioPreprocessor:
     def __init__(self, target_sr: int = 22050, min_duration: float = 5.0):
@@ -16,6 +17,7 @@ class AudioPreprocessor:
         self.min_duration = min_duration
         self.vad = webrtcvad.Vad(2)  # Aggressiveness mode 2
         
+    @log_execution_details
     def load_audio(self, audio_path: str) -> Tuple[np.ndarray, int]:
         """Load and validate audio file."""
         try:
@@ -32,6 +34,7 @@ class AudioPreprocessor:
             logger.error(f"Failed to load audio {audio_path}: {e}")
             raise
             
+    @log_execution_details
     def remove_noise(self, audio: np.ndarray, sr: int) -> np.ndarray:
         """Apply noise reduction."""
         try:
@@ -89,8 +92,10 @@ class AudioPreprocessor:
         logger.info(f"Audio segmented into {len(segments)} parts")
         return segments
         
+    @log_execution_details
     def preprocess(self, audio_path: str) -> dict:
         """Complete preprocessing pipeline."""
+        log_complexity("AudioPreprocessor", "O(N)", "O(N)")
         start_time = time.time()
         
         # Load audio

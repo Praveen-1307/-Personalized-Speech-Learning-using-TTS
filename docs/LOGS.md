@@ -59,14 +59,28 @@ INFO: Saved metadata to output/cloned_123.json
 ```
 
 ## 3. Monitoring Metrics
+The system now implements automated execution tracking for all high-computation functions.
 
-### Real-Time Factors (RTF)
-*   **Target**: `< 0.5` (Synthesis 2x faster than real-time speech).
-*   **Measurement**: Total generation time vs. audio duration in JSON metadata.
+### Detailed Execution Logs (`[ExecutionStart]` / `[ExecutionComplete]`)
+Every major function in the `personalization_engine` is decorated to log:
+*   **Latency**: Total time taken for the function to complete.
+*   **Memory Delta**: RSS memory change during function execution.
+*   **Object Metadata**: Sizes, shapes, and lengths of returned objects.
 
-### System Health
-*   **VRAM Usage**: Monitored via `torch.cuda` logging.
-*   **Disk I/O**: Tracked when writing high-fidelity PCM WAV files.
+### Object Data & Metadata
+*   **Feature Vectors**: Dimensions of extracted F0 and Energy contours are logged.
+*   **Model Parameters**: Transformer parameter counts are logged during initialization (e.g., `Loaded Qwen/Qwen3-TTS ... | Parameters: 620,000,000`).
+*   **Input Context**: Input audio duration, sample rate, and text length are tracked for every request.
+
+### System Health & Hardware
+*   **Real-Time Hardware Tracking**: `[Metrics] [MemoryFootprint]` entries show CPU% and RAM usage (MB) at high-frequency checkpoints.
+*   **VRAM**: GPU utilization is monitored via `torch.cuda` when active.
+
+### Complexity Observations (`[Complexity]`)
+The system logs theoretical time and space complexity markers for transparency:
+*   **Feature Extraction**: `O(N log N)` (via FFT/Spectral analysis).
+*   **Qwen Inference**: `O(Tokens * Model_Size)`.
+*   **Profile Learning**: `O(Iterations * K * N * D)` for GMM-based pattern learning.
 
 ## 4. Error Logging Table
 

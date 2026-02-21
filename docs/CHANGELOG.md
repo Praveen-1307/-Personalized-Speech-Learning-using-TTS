@@ -2,6 +2,19 @@
 
 All notable changes to the TTS Personalization Engine project are documented here.
 
+## [2.1.0] - 2026-02-18
+
+### Added
+- **Real-Time System Metrics**: Integrated `psutil` to log CPU and Memory usage during model initialization and synthesis cycles.
+- **Synthesis Validation Engine**: Created `validator.py` for automated quality assurance of input text and generated audio.
+- **Validation Reporting**: Automated generation of `validation_report.json` for every synthesis, including word match estimates.
+- **CLI Validation Tool**: Added `generate_validation_report.py` for manual post-synthesis verification.
+
+### Changed
+- **Architectural Specification**: Updated `ARCHITECTURE.md` and `DIAGRAM.md` with explicit input/output data flow for all pipeline stages.
+- **Monitoring Capability**: Enhanced `logs/app.log` with diagnostic hardware metrics.
+- **Interactive UI**: Updated `run_qwen_interactive.py` to display real-time synthesis fidelity scores.
+
 ## [2.0.0] - 2026-02-10 (Current)
 
 ### Added

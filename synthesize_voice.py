@@ -7,10 +7,11 @@ import argparse
 from pathlib import Path
 from personalization_engine.synthesis_adapter import SynthesisAdapter
 
-from personalization_engine.logger import setup_logger
+from personalization_engine.logger import setup_logger, log_system_metrics
 logger = setup_logger("synthesize_voice")
 
 def main():
+    log_system_metrics(logger)
     parser = argparse.ArgumentParser(description="Synthesize text using a personalized profile.")
     parser.add_argument("--text", type=str, required=True, help="Text to synthesize")
     parser.add_argument("--user-id", type=str, required=True, help="User ID to use for personalization")
@@ -57,6 +58,7 @@ def main():
     # 3. Synthesize
     logger.info(f"Synthesizing: '{args.text}'")
     result = adapter.adapt(args.text, profile)
+    log_system_metrics(logger)
     
     # 4. Save/Move Output
     output_path = Path(args.output)

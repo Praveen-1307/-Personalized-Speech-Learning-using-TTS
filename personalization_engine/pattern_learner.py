@@ -8,7 +8,8 @@ import torch.nn as nn
 import joblib
 import json
 
-logger = logging.getLogger(__name__)
+from personalization_engine.logger import get_logger, log_execution_details, log_complexity
+logger = get_logger(__name__)
 
 class PatternLearner:
     def __init__(self, method: str = 'gmm', n_components: int = 8):
@@ -18,6 +19,7 @@ class PatternLearner:
         self.model = None
         self.feature_importance = {}
         
+    @log_execution_details
     def prepare_features(self, features_list: List[Dict]) -> np.ndarray:
         """Prepare features for learning."""
         # Extract key features
@@ -65,8 +67,11 @@ class PatternLearner:
         logger.info(f"Prepared features: {feature_matrix.shape}")
         return feature_matrix
         
+    @log_execution_details
     def learn_gmm(self, features_matrix: np.ndarray):
         """Learn patterns using Gaussian Mixture Model."""
+        log_complexity("GMM_Trainer", f"O(Iterations * K * N * D)", "O(K * D)")
+        logger.info(f"[ObjectData] Feature Matrix Shape: {features_matrix.shape} | Components: {self.n_components}")
         try:
             # Handle small datasets
             if features_matrix.shape[0] < self.n_components:
@@ -96,8 +101,11 @@ class PatternLearner:
             logger.error(f"GMM training failed: {e}")
             raise
             
+    @log_execution_details
     def learn_neural(self, features_matrix: np.ndarray, epochs: int = 100):
         """Learn patterns using neural network."""
+        log_complexity("NeuralTrainer", f"O(Epochs * N * D^2)", "O(Weights)")
+        logger.info(f"[ObjectData] Training Vector Count: {len(features_matrix)} | Hidden Dim: 64")
         class PatternNet(nn.Module):
             def __init__(self, input_dim, hidden_dim=64):
                 super().__init__()
@@ -158,6 +166,7 @@ class PatternLearner:
             
         logger.info(f"Feature importance calculated: {self.feature_importance}")
         
+    @log_execution_details
     def generate_profile(self, features: Dict) -> Dict:
         """Generate voice profile from learned patterns."""
         if self.model is None:

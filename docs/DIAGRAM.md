@@ -5,19 +5,19 @@ This diagram illustrates the personalized voice cloning pipeline, from raw micro
 ```mermaid
 graph TD
     %% Input Stage
-    Input[Microphone Input / .wav] -->|Record 5s| Rec[Reference Audio Storage]
+    Input[Microphone Input / .wav] -->|Binary PCM| Rec[Reference Audio Storage]
     
     %% Analysis Stage
     subgraph Analysis [Voice Analysis & Profiling]
-        FE[Feature Extractor] -->|Extract| Pitch[Pitch F0 & Range]
-        FE -->|Extract| Energy[Stress & Energy]
-        FE -->|Extract| Rhythm[Speaking Pattern & Pace]
+        FE[Feature Extractor] -->|Numerical Vectors| Pitch[Pitch F0 & Range]
+        FE -->|RMS Energy Tensors| Energy[Stress & Energy]
+        FE -->|Cadence Data| Rhythm[Speaking Pattern & Pace]
         
-        ED[Emotion Detector] -->|Detect| Emotion[Emotion & Confidence]
+        ED[Emotion Detector] -->|Categorical Label| Emotion[Emotion & Confidence]
     end
     
-    Rec --> FE
-    Rec --> ED
+    Rec -->|Time-Domain Signal| FE
+    Rec -->|Spectrograms| ED
 
     %% Model Integration Stage
     subgraph Model [Qwen3-TTS Integration]
@@ -26,17 +26,17 @@ graph TD
     end
     
     %% Logical Flow
-    Pitch & Energy & Rhythm & Emotion -->|JSON Metadata| Profile[Voice Profile Archive]
-    Profile -.->|User Context| QTTS
-    Rec -->|Reference Audio| Clone
+    Pitch & Energy & Rhythm & Emotion -->|Structured JSON| Profile[Voice Profile Archive]
+    Profile -.->|Style Embeddings| QTTS
+    Rec -->|Style Reference| Clone
     
     %% Synthesis Stage
-    TEXT[Input Text] --> Clone
-    Clone --> QTTS
-    QTTS -->|Synthesized| WAV[Output Cloned Audio]
+    TEXT[Input Text String] -->|NLP Tokens| Clone
+    Clone -->|Latent Representations| QTTS
+    QTTS -->|Digital Audio Samples| WAV[Output Cloned Audio]
     
     %% Output Metadata
-    WAV -->|Matching Pair| Meta[JSON Voice Analysis]
+    WAV -->|File Creation| Meta[JSON Voice Analysis]
 
     %% Styling
     classDef main fill:#f9f,stroke:#333,stroke-width:2px;

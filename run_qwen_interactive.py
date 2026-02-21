@@ -14,9 +14,10 @@ from rich.progress import Progress, SpinnerColumn, TextColumn
 
 # Import our custom wrapper that mimics the MLX API but works on Windows
 from personalization_engine.qwen_adapter import load_model, generate_audio
+from personalization_engine.validator import SynthesisValidator
 
 # Configure logging
-from personalization_engine.logger import setup_logger
+from personalization_engine.logger import setup_logger, log_system_metrics
 logger = setup_logger("qwen_interactive")
 
 console = Console()
@@ -98,6 +99,9 @@ def main():
         except:
             console.print("[dim yellow]Note: Could not load emotion model, using default analysis.[/dim]")
 
+    # Initialize Validator
+    validator = SynthesisValidator()
+
     try:
         with console.status("[bold green]Loading model...[/bold green]"):
             logger.info(f"Loading Qwen TTS model: {model_id}")
@@ -163,6 +167,7 @@ def main():
                     ref_audio=str(ref_audio_path),
                     file_prefix=file_prefix
                 )
+                log_system_metrics(logger)
                 
                 # Save Metadata JSON
                 json_path = output_dir / f"cloned_{timestamp}.json"
@@ -176,8 +181,28 @@ def main():
                     json.dump(metadata, f, indent=4)
                 logger.info(f"Metadata written to {json_path}")
                 
+                # Generate Validation Report
+                report_path = output_dir / f"cloned_{timestamp}_report.json"
+                text_res = validator.validate_text(text)
+                audio_res = validator.validate_audio(output_path, text)
+                
+                report = {
+                    "summary": {"status": "PASS" if text_res['valid'] and audio_res['valid'] else "FAIL"},
+                    "text": text_res,
+                    "audio": audio_res
+                }
+                with open(report_path, 'w') as f:
+                    json.dump(report, f, indent=4)
+                
+                logger.info(f"Validation report saved to {report_path}")
+                
             console.print(f"✅ [green]Generated:[/green] [white]{output_path}[/white]")
             console.print(f"📄 [dim]Metadata saved to: {json_path}[/dim]")
+            console.print(f"📊 [dim]Validation report: {report_path}[/dim]")
+            
+            # Display brief match info
+            match_score = audio_res['metrics'].get('match_score', 0)
+            console.print(f"🎯 [bold cyan]Estimated Word Match:[/bold cyan] {match_score:.1%}")
             
             play_audio(output_path)
             

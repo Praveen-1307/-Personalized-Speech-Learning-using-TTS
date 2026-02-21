@@ -1,4 +1,4 @@
-# Personalized TTS Engine (Piper Integration)
+ Personalized TTS Engine (Piper Integration)
 
 A comprehensive Python-based personalization engine that extends Piper TTS. It analyzes user audio to extract speaking patterns, pitch, and emotion, creating a personalized voice profile for synthesis.
 

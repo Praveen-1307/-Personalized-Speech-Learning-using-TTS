@@ -9,7 +9,7 @@ from scipy import stats
 import matplotlib.pyplot as plt
 import time
 
-from personalization_engine.logger import get_logger
+from personalization_engine.logger import get_logger, log_execution_details, log_complexity
 logger = get_logger(__name__)
 
 @dataclass
@@ -35,6 +35,7 @@ class FeatureExtractor:
         self.frame_length = 2048
         self.hop_length = 512
         
+    @log_execution_details
     def extract_f0(self, audio: np.ndarray) -> np.ndarray:
         """Extract fundamental frequency using WORLD."""
         try:
@@ -56,6 +57,7 @@ class FeatureExtractor:
             f0 = f0[~np.isnan(f0)]
             return f0
             
+    @log_execution_details
     def extract_energy(self, audio: np.ndarray) -> np.ndarray:
         """Extract energy contours."""
         energy = librosa.feature.rms(y=audio, frame_length=self.frame_length,
@@ -109,6 +111,7 @@ class FeatureExtractor:
         logger.info(f"Speaking pattern analyzed: {pattern}")
         return pattern
         
+    @log_execution_details
     def extract_emotion_features(self, audio: np.ndarray) -> Dict[str, float]:
         """Extract features related to emotion."""
         f0 = self.extract_f0(audio)
@@ -161,8 +164,13 @@ class FeatureExtractor:
         # This is simplified - actual implementation would need frame alignment
         return [(0, len(audio))]  # Placeholder
         
+    @log_execution_details
     def extract_all_features(self, audio: np.ndarray) -> Dict:
         """Extract all features for voice profile."""
+        log_complexity("FeatureExtractor", "O(N log N)", "O(N)")
+        duration_sec = len(audio) / self.sr
+        logger.info(f"[InputMetadata] Audio Duration: {duration_sec:.2f}s | Samples: {len(audio)} | SR: {self.sr}")
+        
         start_time = time.time()
         
         # Extract prosodic features
