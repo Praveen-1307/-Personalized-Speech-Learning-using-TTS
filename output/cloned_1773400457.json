@@ -1,0 +1,24 @@
+{
+    "text": "Learning is a continuous journey that shapes the way people think, act, and understand the world around them, and every individual has the ability to grow through knowledge, experience, and reflection if they remain curious and open to new ideas. From childhood to adulthood, people encounter situations that challenge their understanding and push them to develop new skills, and these moments often become the most valuable opportunities for personal growth. Education is not limited to classrooms or textbooks because learning also happens through conversations, observation, practice, and the mistakes that people make along the way. When someone tries something new, they may not succeed immediately, but each attempt teaches them something important about how to improve, adapt, and move forward with greater confidence.",
+    "timestamp": 1773400457,
+    "reference_voice_analysis": {
+        "pitch": 132.40302233096952,
+        "pitch_range": [
+            85.59901793937424,
+            191.5048418309388
+        ],
+        "stress_energy": 0.0006812131614424288,
+        "emotion": "angry",
+        "emotion_confidence": 0.29075750793830174,
+        "speaking_pattern": {
+            "words_per_minute": 150,
+            "syllables_per_second": 3.75,
+            "pause_durations": [],
+            "inter_word_delays": [
+                0.3
+            ],
+            "rhythm_entropy": 0
+        }
+    },
+    "model_used": "Qwen/Qwen3-TTS-12Hz-0.6B-Base"
+}

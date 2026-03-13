@@ -48,7 +48,7 @@ def load_model(model_id: str, device: str = None):
 
 import re
 
-def split_text_into_chunks(text: str, max_chars: int = 600) -> List[str]:
+def split_text_into_chunks(text: str, max_chars: int = 1200) -> List[str]:
     """Split text into manageable chunks for TTS based on sentence boundaries."""
     # Split by period, exclamation, or question mark followed by space
     sentences = re.split(r'(?<=[.!?])\s+', text)
@@ -92,8 +92,8 @@ def generate_audio(model, text: str, ref_audio: str, file_prefix: str = "output"
     if not os.path.exists(ref_audio):
         raise FileNotFoundError(f"Reference audio not found: {ref_audio}")
         
-    # Split text into larger chunks to minimize transitions (600 chars ~ 100 words)
-    chunks = split_text_into_chunks(text, max_chars=600)
+    # Split text into larger chunks to minimize transitions (1200 chars ~ 200 words)
+    chunks = split_text_into_chunks(text, max_chars=1200)
     logger.info(f"Processing text in {len(chunks)} chunks as a single batch")
     
     # Pre-extract speaker embedding once
@@ -109,9 +109,9 @@ def generate_audio(model, text: str, ref_audio: str, file_prefix: str = "output"
         # Batch processing ensures the same speaker encoder state is used for all
         output = model.generate_voice_clone(
             text=chunks,
-            voice_clone_prompt=prompt,
+            voice_clone_prompt=[prompt] * len(chunks), # Manually broadcast prompt to all chunks for consistency
             x_vector_only_mode=True,
-            temperature=0.7,  # More stable than default 0.9
+            temperature=0.1,  # Lower temperature for much higher voice stability
             top_p=0.95,       # Slightly more constrained
             repetition_penalty=1.1 # Prevent artifacts in long runs
         )
@@ -155,7 +155,7 @@ def generate_audio(model, text: str, ref_audio: str, file_prefix: str = "output"
                 text=chunk,
                 voice_clone_prompt=prompt,
                 x_vector_only_mode=True,
-                temperature=0.7
+                temperature=0.1
             )
             if isinstance(out, tuple):
                 wavs, sr = out[0], out[1]

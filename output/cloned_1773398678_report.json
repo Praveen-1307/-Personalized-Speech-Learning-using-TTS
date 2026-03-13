@@ -1,0 +1,28 @@
+{
+    "summary": {
+        "status": "PASS"
+    },
+    "text": {
+        "valid": true,
+        "errors": [],
+        "warnings": [],
+        "metrics": {
+            "word_count": 104,
+            "character_count": 705
+        }
+    },
+    "audio": {
+        "valid": true,
+        "errors": [],
+        "warnings": [],
+        "metrics": {
+            "duration_seconds": 35.76,
+            "sample_rate": 24000,
+            "max_amplitude": 0.60638427734375,
+            "expected_words": 104,
+            "estimated_words_detected": 34,
+            "match_score": 0.3269230769230769,
+            "words_matched_count": 34
+        }
+    }
+}
