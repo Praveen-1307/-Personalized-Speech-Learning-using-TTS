@@ -1,0 +1,34 @@
+{
+    "text": "Curiosity drives progress, and every day offers a new chance to learn something meaningful, whether it is understanding a complex idea, solving a challenging problem, or simply observing the world with greater attention. Over time these steady habits shape character, strengthen discipline, and help transform ordinary days into meaningful steps toward personal growth and lasting success while reminding us that consistent learning and curiosity can open doors to new ideas every single day always",
+    "timestamp": 1773335658,
+    "reference_voice_analysis": {
+        "pitch": 119.44225255728932,
+        "pitch_range": [
+            65.43778890550385,
+            244.74729520446695
+        ],
+        "stress_energy": 0.05507194250822067,
+        "emotion": "happy",
+        "emotion_confidence": 0.25981007322476246,
+        "speaking_pattern": {
+            "words_per_minute": 150,
+            "syllables_per_second": 3.75,
+            "pause_durations": [
+                0.576,
+                0.128,
+                0.48,
+                0.064,
+                0.096
+            ],
+            "inter_word_delays": [
+                0.576,
+                0.128,
+                0.48,
+                0.064,
+                0.096
+            ],
+            "rhythm_entropy": 1.3321790402101223
+        }
+    },
+    "model_used": "Qwen/Qwen3-TTS-12Hz-0.6B-Base"
+}

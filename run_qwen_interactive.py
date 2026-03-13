@@ -65,20 +65,60 @@ def main():
     ref_audio_path = profile_dir / f"{user_id}.wav"
     logger.info(f"Initialized session for user: {user_id}")
     
-    # 2. Record or Use Existing
-    if not ref_audio_path.exists() or Confirm.ask("Do you want to record a new voice reference?", default=True):
+    # 2. Dual-Input Selection (Live or Pre-recorded)
+    console.print("\n[bold cyan]Step 1: Select Reference Audio Source[/bold cyan]")
+    choice = Prompt.ask(
+        "Choose source", 
+        choices=["1", "2"], 
+        default="1",
+        show_choices=False
+    )
+    console.print("[dim]1. Live Microphone Recording[/dim]")
+    console.print("[dim]2. Pre-recorded File (.wav from profiles)[/dim]")
+    
+    selected_ref = None
+    
+    if choice == "1":
+        # Live Recording
         duration = int(Prompt.ask("Recording duration (seconds)", default="5"))
         audio_data, sr = record_audio(duration=duration)
         
         if audio_data is not None:
             sf.write(str(ref_audio_path), audio_data, sr)
-            logger.info(f"Reference audio saved to {ref_audio_path}")
-            console.print(f"[green]Reference audio saved to {ref_audio_path}[/green]")
+            selected_ref = ref_audio_path
+            logger.info(f"Reference audio recorded and saved to {ref_audio_path}")
+            console.print(f"[green]Live recording saved to {selected_ref}[/green]")
         else:
             console.print("[red]Recording failed. Exiting.[/red]")
             return
     else:
-        console.print(f"[green]Using existing reference: {ref_audio_path}[/green]")
+        # Pre-recorded File Selection
+        wav_files = list(profile_dir.glob("*.wav"))
+        if not wav_files:
+            console.print("[yellow]No pre-recorded files found in 'profiles/'. Switching to microphone...[/yellow]")
+            duration = int(Prompt.ask("Recording duration (seconds)", default="5"))
+            audio_data, sr = record_audio(duration=duration)
+            if audio_data is not None:
+                sf.write(str(ref_audio_path), audio_data, sr)
+                selected_ref = ref_audio_path
+            else: return
+        else:
+            console.print("\n[bold]Available Pre-recorded Files:[/bold]")
+            for i, f in enumerate(wav_files):
+                console.print(f"[{i+1}] {f.name}")
+            
+            file_idx = int(Prompt.ask("Select file number", default="1")) - 1
+            if 0 <= file_idx < len(wav_files):
+                selected_ref = wav_files[file_idx]
+                # Copy/Symlink to ref_audio_path for consistency in the engine
+                if selected_ref.resolve() != ref_audio_path.resolve():
+                    import shutil
+                    shutil.copy(selected_ref, ref_audio_path)
+                selected_ref = ref_audio_path
+                console.print(f"[green]Using pre-recorded file: {wav_files[file_idx].name}[/green]")
+            else:
+                console.print("[red]Invalid selection. Exiting.[/red]")
+                return
 
     # 3. Initialize Model and Analysis Tools
     model_id = "Qwen/Qwen3-TTS-12Hz-0.6B-Base"

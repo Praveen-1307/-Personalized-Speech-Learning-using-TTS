@@ -9,7 +9,7 @@ The system follows a modular adapter-based architecture:
 1.  **Input Layer**: Accepts **Raw Audio (Microphone/WAV)** and **Input Text (String)**.
 2.  **Analysis Layer**: Processes **Raw Audio** to output **Acoustic Features** (F0, Energy) and **Emotion Labels**.
 3.  **Core Intelligence**: The **Qwen3-TTS (0.6B/1.7B)** transformer model, which takes **Reference Style** and **Target Text** to output **Mel-Spectrograms/Waveforms**.
-4.  **Adapter Layer**: A Windows-optimized PyTorch wrapper that converts **Model Tensors** into **WAV signals**.
+4.  **Adapter Layer**: A Windows-optimized PyTorch wrapper that converts **Model Tensors** into **WAV signals** with **Batch Processing** for voice consistency.
 5.  **Data Layer**: Dual output system saving synthesized **Cloned Audio (.wav)** and its technical **Metadata Fingerprint (.json)**.
 
 ```mermaid
@@ -25,9 +25,12 @@ graph TD
     
     subgraph Core [Core Intelligence & Adapter]
         Profile -->|Acoustic Context Vector| Qwen[Qwen3-TTS Model]
-        InputLayer -->|Reference Audio WAV| Qwen
-        InputLayer -->|Target Text String| Qwen
-        Qwen -->|Generated Logit/Waveform Tensors| Adapter[Audio Adapter]
+        InputLayer -->|Reference Audio WAV| Prompt[Prompt Extractor]
+        InputLayer -->|Target Text String| Chunker[Text Chunker]
+        Prompt -->|Speaker Embedding x-vector| Qwen
+        Chunker -->|Batched Text Chunks| Qwen
+        Qwen -->|Batched Waveform Tensors| Sync[Batch Synchronizer]
+        Sync -->|Concatenated PCM| Adapter[Audio Adapter]
     end
     
     subgraph Data [Data Layer]
@@ -57,29 +60,33 @@ A machine learning module that classifies the atmospheric "vibe" of the input.
 *   **Dynamic Response**: Detects 7 core emotions including Happy, Sad, Angry, and Calm.
 
 ### 3. Qwen Adapter (`personalization_engine.qwen_adapter`)
-The heart of the new system, providing a high-level interface for complex model interactions.
+The heart of the system, providing a high-level interface for complex model interactions with focus on consistency.
 *   **Input**: Target Text (UTF-8), Reference Audio (WAV), and Model Configuration.
 *   **Output**: High-fidelity synthesized waveform (WAV).
-*   **Zero-Shot Cloning**: Unlike legacy systems, Qwen does not require fine-tuning; it uses **In-Context Learning (ICL)** to mimic a voice from just 5 seconds of audio.
-*   **Windows Optimization**: Handles device placement (CPU/CUDA) gracefully on Windows machines.
-*   **Tokenization**: Integrated `Qwen3TTSTokenizer` for advanced linguistic processing.
+*   **Voice Consistency Logic**: Implements batched processing for multi-chunk inputs to prevent voice shifting between sentences.
+*   **Embedding Reuse**: Pre-extracts `x-vector` speaker embeddings once per session, ensuring the model's internal prompt state remains identical for all outputs.
+*   **Stability Controls**: Optimized inference parameters (Temperature: 0.7, Repetition Penalty: 1.1) to reduce acoustic artifacts in long-form speech.
+*   **Text Chunker**: Intelligent semantic splitting (max 600 chars) that preserves natural breath pauses while maximizing throughput.
 
 ### 4. Interactive Interface (`run_qwen_interactive.py`)
 A comprehensive command-line UI built with `Rich`.
 *   **Iterative Workflow**: Maintains the model in memory to allow rapid text-to-speech loops without reloading weights.
 *   **Auto-Play**: Integrated sounddevice playback for immediate feedback.
+*   **Live Updates**: Allows re-recording the voice or changing inputs without restarting the session.
 
 ## Data Flow
 
-### The "Clone & Fingerprint" Loop
+### The "Clone & Batch" Pipeline
 1.  **Capture**: User records 5 seconds of reference audio.
-2.  **Extract**: Pitch, Energy, and Emotion are computed and cached in RAM.
-3.  **Load**: Qwen3-TTS weights are loaded into GPU/RAM.
-4.  **Synthesize**: The text is combined with the reference audio using **x\_vector\_only\_mode** for rapid zero-shot transfer.
-5.  **Persist**: The system writes a synchronized pair:
+2.  **Extract**: Pitch, Energy, and Emotion are computed and cached; Voice prompt (x-vector) is pre-extracted.
+3.  **Prepare**: Input text is split into semantic chunks (preserving sentence boundaries).
+4.  **Synthesize (Batched)**: All text chunks are processed as a single parallel batch through the Qwen model using the pre-extracted voice prompt.
+5.  **Reconstruct**: The resulting batched waveforms are concatenated, post-processed (e.g., speed adjustment), and normalized.
+6.  **Persist**: The system writes a synchronized pair:
     *   `cloned_TIMESTAMP.wav`: The actual voice.
-    *   `cloned_TIMESTAMP.json`: The technical specs (Pitch, Emotion, Stress).
+    *   `cloned_TIMESTAMP.json`: The technical specs and reference analysis.
+    *   `cloned_TIMESTAMP_report.json`: Full validation metrics (match score, word count).
 
 ## Scaling & Implementation
 *   **Model Switching**: Supports 0.6B Base for speed/low-RAM and 1.7B VoiceDesign for high-fidelity clones.
-*   **Platform Independence**: The code is designed to run on standard Windows hardware without specialized macOS chips.
+*   **Platform Independence**: Optimized for Windows PyTorch (CUDA/CPU) with fallback mechanisms for serial processing if batching exceeds VRAM limits.

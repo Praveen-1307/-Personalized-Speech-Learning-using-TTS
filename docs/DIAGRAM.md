@@ -1,49 +1,52 @@
 # System Data & Logic Flow
 
-This diagram illustrates the personalized voice cloning pipeline, from raw microphone input to the final synthesized output with interactive analysis.
+This diagram illustrates the personalized voice cloning pipeline, optimized for **Voice Consistency** through batched inference and pre-extracted speaker embeddings.
 
 ```mermaid
 graph TD
     %% Input Stage
     Input[Microphone Input / .wav] -->|Binary PCM| Rec[Reference Audio Storage]
     
-    %% Analysis Stage
-    subgraph Analysis [Voice Analysis & Profiling]
-        FE[Feature Extractor] -->|Numerical Vectors| Pitch[Pitch F0 & Range]
-        FE -->|RMS Energy Tensors| Energy[Stress & Energy]
-        FE -->|Cadence Data| Rhythm[Speaking Pattern & Pace]
-        
-        ED[Emotion Detector] -->|Categorical Label| Emotion[Emotion & Confidence]
+    %% Analysis & Prompt Stage
+    subgraph PreProcessing [Pre-Inference Processing]
+        direction LR
+        FE[Feature Extractor] -->|Numerical Vectors| Pitch[Pitch & Energy]
+        ED[Emotion Detector] -->|Emotion Label| Emotion[Emotion Profile]
+        Prompt[x-vector Extractor] -->|Speaker Embedding| Embedding[Latent Voice Prompt]
     end
     
-    Rec -->|Time-Domain Signal| FE
-    Rec -->|Spectrograms| ED
+    Rec -->|Audio Signal| FE
+    Rec -->|Audio Signal| ED
+    Rec -->|Audio Signal| Prompt
+
+    %% Batching Logic
+    Text[Input Text String] -->|Semantic Splitting| Chunker[Text Chunker]
+    Chunker -->|Batched Chunks| Engine
 
     %% Model Integration Stage
-    subgraph Model [Qwen3-TTS Integration]
-        QTTS[Qwen3-TTS 0.6B Engine]
-        Clone[Zero-Shot Voice Cloning]
+    subgraph Engine [Qwen3-TTS Batch Engine]
+        direction TB
+        Base[Qwen3-TTS 0.6B/1.7B]
+        Embedding -->|Session Prompt| Base
+        Base -->|Parallel Synthesis| BatchOut[Batched Waveforms]
     end
     
-    %% Logical Flow
-    Pitch & Energy & Rhythm & Emotion -->|Structured JSON| Profile[Voice Profile Archive]
-    Profile -.->|Style Embeddings| QTTS
-    Rec -->|Style Reference| Clone
-    
     %% Synthesis Stage
-    TEXT[Input Text String] -->|NLP Tokens| Clone
-    Clone -->|Latent Representations| QTTS
-    QTTS -->|Digital Audio Samples| WAV[Output Cloned Audio]
+    BatchOut -->|Concatenation| Reconstruction[Audio Reconstruction]
+    Reconstruction -->|PCM Samples| WAV[Output Cloned Audio]
     
     %% Output Metadata
-    WAV -->|File Creation| Meta[JSON Voice Analysis]
+    WAV -->|File Creation| Meta[Metadata & Reports]
+    Pitch & Emotion -->|Analysis JSON| Meta
 
-    %% Styling
-    classDef main fill:#f9f,stroke:#333,stroke-width:2px;
-    classDef analysis fill:#ccf,stroke:#333,stroke-width:1px;
-    classDef model fill:#cfc,stroke:#333,stroke-width:1px;
+    %% Styling with High Contrast
+    classDef mainNode fill:#f0f7ff,stroke:#005bb7,stroke-width:2px;
+    classDef analysisNode fill:#fff8e1,stroke:#ff8f00,stroke-width:2px;
+    classDef modelNode fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
+    classDef outputNode fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px;
     
-    class QTTS,Clone,FE,ED main;
-    class Pitch,Energy,Rhythm,Emotion analysis;
-    class WAV,Meta model;
+    class Engine,Base,Prompt,Embedding mainNode;
+    class FE,ED,Pitch,Emotion,PreProcessing analysisNode;
+    class Chunker,BatchOut,Reconstruction modelNode;
+    class WAV,Meta outputNode;
 ```

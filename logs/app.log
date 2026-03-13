@@ -1,396 +1,381 @@
-2026-02-17 12:02:25,892 - qwen_interactive - INFO - [run_qwen_interactive.py:65] - Initialized session for user: current_session_user
-2026-02-17 12:02:59,610 - qwen_interactive - INFO - [run_qwen_interactive.py:74] - Reference audio saved to profiles\current_session_user.wav
-2026-02-17 12:03:01,599 - personalization_engine.emotion_detector - INFO - [emotion_detector.py:206] - Emotion model loaded from models\emotion\svm_model.pkl
-2026-02-17 12:03:01,610 - qwen_interactive - INFO - [run_qwen_interactive.py:103] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base
-2026-02-17 12:03:01,615 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:30] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base on cpu
-2026-02-17 12:03:32,479 - qwen_interactive - INFO - [run_qwen_interactive.py:105] - Model loaded successfully
-2026-02-17 12:03:32,490 - qwen_interactive - INFO - [run_qwen_interactive.py:133] - Starting initial voice analysis
-2026-02-17 12:03:32,693 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:48] - F0 extracted: 678 frames, range: 80.4-178.0 Hz
-2026-02-17 12:03:38,302 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:63] - Energy extracted: 157 frames
-2026-02-17 12:03:38,540 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:78] - Detected 2 silence regions
-2026-02-17 12:03:38,552 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:109] - Speaking pattern analyzed: SpeakingPattern(words_per_minute=150, syllables_per_second=3.75, pause_durations=[0.448, 1.44], inter_word_delays=[0.448, 1.44], rhythm_entropy=0.6931471805599453)
-2026-02-17 12:03:38,669 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:48] - F0 extracted: 678 frames, range: 80.4-178.0 Hz
-2026-02-17 12:03:38,674 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:63] - Energy extracted: 157 frames
-2026-02-17 12:03:38,787 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:48] - F0 extracted: 678 frames, range: 80.4-178.0 Hz
-2026-02-17 12:03:38,827 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:143] - Emotion features extracted: ['pitch_mean', 'pitch_std', 'pitch_range', 'energy_mean', 'energy_std', 'speaking_rate', 'mfccs']
-2026-02-17 12:03:38,862 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:211] - All features extracted in 6.32s
-2026-02-17 12:03:40,952 - personalization_engine.emotion_detector - INFO - [emotion_detector.py:140] - Detected emotion: angry (confidence: 29.08%)
-2026-02-17 12:03:40,954 - qwen_interactive - INFO - [run_qwen_interactive.py:135] - Initial analysis complete. Detected emotion: angry
-2026-02-17 12:03:47,641 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:46] - Generating audio for text: This is praveen
-2026-02-17 12:04:22,055 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:70] - Saved audio to output\cloned_1771310027.wav
-2026-02-17 12:04:22,085 - qwen_interactive - INFO - [run_qwen_interactive.py:177] - Metadata written to output\cloned_1771310027.json
-2026-02-17 12:13:50,249 - qwen_interactive - INFO - [run_qwen_interactive.py:65] - Initialized session for user: current_session_user
-2026-02-17 12:16:16,395 - qwen_interactive - INFO - [run_qwen_interactive.py:74] - Reference audio saved to profiles\current_session_user.wav
-2026-02-17 12:16:20,372 - personalization_engine.emotion_detector - INFO - [emotion_detector.py:206] - Emotion model loaded from models\emotion\svm_model.pkl
-2026-02-17 12:16:20,382 - qwen_interactive - INFO - [run_qwen_interactive.py:103] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base
-2026-02-17 12:16:20,385 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:30] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base on cpu
-2026-02-17 12:16:50,572 - qwen_interactive - INFO - [run_qwen_interactive.py:105] - Model loaded successfully
-2026-02-17 12:16:50,581 - qwen_interactive - INFO - [run_qwen_interactive.py:133] - Starting initial voice analysis
-2026-02-17 12:16:50,801 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:48] - F0 extracted: 580 frames, range: 89.1-330.5 Hz
-2026-02-17 12:16:58,155 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:63] - Energy extracted: 157 frames
-2026-02-17 12:16:59,626 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:78] - Detected 4 silence regions
-2026-02-17 12:16:59,637 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:109] - Speaking pattern analyzed: SpeakingPattern(words_per_minute=150, syllables_per_second=3.75, pause_durations=[0.256, 0.128, 0.064, 0.064], inter_word_delays=[0.256, 0.128, 0.064, 0.064], rhythm_entropy=1.0397207708399179)
-2026-02-17 12:16:59,753 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:48] - F0 extracted: 580 frames, range: 89.1-330.5 Hz
-2026-02-17 12:16:59,759 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:63] - Energy extracted: 157 frames
-2026-02-17 12:16:59,868 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:48] - F0 extracted: 580 frames, range: 89.1-330.5 Hz
-2026-02-17 12:16:59,916 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:143] - Emotion features extracted: ['pitch_mean', 'pitch_std', 'pitch_range', 'energy_mean', 'energy_std', 'speaking_rate', 'mfccs']
-2026-02-17 12:16:59,956 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:211] - All features extracted in 9.31s
-2026-02-17 12:17:02,248 - personalization_engine.emotion_detector - INFO - [emotion_detector.py:140] - Detected emotion: angry (confidence: 29.86%)
-2026-02-17 12:17:02,251 - qwen_interactive - INFO - [run_qwen_interactive.py:135] - Initial analysis complete. Detected emotion: angry
-2026-02-17 12:17:21,720 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:46] - Generating audio for text: This is karthi
-2026-02-17 12:17:54,830 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:70] - Saved audio to output\cloned_1771310841.wav
-2026-02-17 12:17:54,859 - qwen_interactive - INFO - [run_qwen_interactive.py:177] - Metadata written to output\cloned_1771310841.json
-2026-02-18 18:07:57,783 - personalization_engine.test - INFO - [CPU:66.7% MEM:94.1%] - [<string>:1] - Verifying metrics
-2026-02-18 18:08:10,408 - personalization_engine.__main__ - INFO - [CPU:50.0% MEM:94.3%] - [validator.py:34] - Input validation: 5 words, 22 chars. Valid: True
-2026-02-18 18:08:58,530 - personalization_engine.feature_extractor - INFO - [CPU:33.3% MEM:92.0%] - [feature_extractor.py:48] - F0 extracted: 179 frames, range: 71.5-720.2 Hz
-2026-02-18 18:09:08,624 - personalization_engine.feature_extractor - INFO - [CPU:0.0% MEM:92.4%] - [feature_extractor.py:63] - Energy extracted: 130 frames
-2026-02-18 18:09:12,626 - personalization_engine.feature_extractor - INFO - [CPU:33.3% MEM:92.6%] - [feature_extractor.py:78] - Detected 1 silence regions
-2026-02-18 18:09:12,647 - personalization_engine.feature_extractor - INFO - [CPU:0.0% MEM:92.6%] - [feature_extractor.py:78] - Detected 1 silence regions
-2026-02-18 18:09:12,651 - personalization_engine.feature_extractor - INFO - [CPU:0.0% MEM:92.6%] - [feature_extractor.py:109] - Speaking pattern analyzed: SpeakingPattern(words_per_minute=150, syllables_per_second=3.75, pause_durations=[0.09287981859410431], inter_word_delays=[0.09287981859410431], rhythm_entropy=0)
-2026-02-18 18:09:12,772 - personalization_engine.feature_extractor - INFO - [CPU:0.0% MEM:92.7%] - [feature_extractor.py:48] - F0 extracted: 179 frames, range: 71.5-720.2 Hz
-2026-02-18 18:09:12,777 - personalization_engine.feature_extractor - INFO - [CPU:0.0% MEM:92.7%] - [feature_extractor.py:63] - Energy extracted: 130 frames
-2026-02-18 18:09:12,869 - personalization_engine.feature_extractor - INFO - [CPU:0.0% MEM:92.7%] - [feature_extractor.py:48] - F0 extracted: 179 frames, range: 71.5-720.2 Hz
-2026-02-18 18:09:12,900 - personalization_engine.feature_extractor - INFO - [CPU:0.0% MEM:92.6%] - [feature_extractor.py:143] - Emotion features extracted: ['pitch_mean', 'pitch_std', 'pitch_range', 'energy_mean', 'energy_std', 'speaking_rate', 'mfccs']
-2026-02-18 18:09:13,003 - personalization_engine.feature_extractor - INFO - [CPU:37.5% MEM:92.7%] - [feature_extractor.py:48] - F0 extracted: 179 frames, range: 71.5-720.2 Hz
-2026-02-18 18:09:13,008 - personalization_engine.feature_extractor - INFO - [CPU:0.0% MEM:92.7%] - [feature_extractor.py:63] - Energy extracted: 130 frames
-2026-02-18 18:09:13,015 - personalization_engine.feature_extractor - INFO - [CPU:0.0% MEM:92.7%] - [feature_extractor.py:78] - Detected 1 silence regions
-2026-02-18 18:09:13,018 - personalization_engine.feature_extractor - INFO - [CPU:50.0% MEM:92.7%] - [feature_extractor.py:109] - Speaking pattern analyzed: SpeakingPattern(words_per_minute=150, syllables_per_second=3.75, pause_durations=[0.09287981859410431], inter_word_delays=[0.09287981859410431], rhythm_entropy=0)
-2026-02-18 18:09:13,199 - personalization_engine.feature_extractor - INFO - [CPU:0.0% MEM:92.7%] - [feature_extractor.py:48] - F0 extracted: 179 frames, range: 71.5-720.2 Hz
-2026-02-18 18:09:13,206 - personalization_engine.feature_extractor - INFO - [CPU:50.0% MEM:92.7%] - [feature_extractor.py:63] - Energy extracted: 130 frames
-2026-02-18 18:09:13,337 - personalization_engine.feature_extractor - INFO - [CPU:0.0% MEM:92.6%] - [feature_extractor.py:48] - F0 extracted: 179 frames, range: 71.5-720.2 Hz
-2026-02-18 18:09:13,354 - personalization_engine.feature_extractor - INFO - [CPU:0.0% MEM:92.6%] - [feature_extractor.py:143] - Emotion features extracted: ['pitch_mean', 'pitch_std', 'pitch_range', 'energy_mean', 'energy_std', 'speaking_rate', 'mfccs']
-2026-02-18 18:09:13,384 - personalization_engine.feature_extractor - INFO - [CPU:0.0% MEM:92.6%] - [feature_extractor.py:211] - All features extracted in 0.47s
-2026-02-18 18:10:53,963 - personalization_engine.long_input_test - INFO - [CPU:0.0% MEM:93.5%] - [test_long_input.py:40] - Starting 1000-word input test...
-2026-02-18 18:10:53,972 - personalization_engine.long_input_test - INFO - [CPU:0.0% MEM:93.5%] - [test_long_input.py:44] - Generated text with 1000 words.
-2026-02-18 18:10:53,976 - personalization_engine.qwen_adapter - INFO - [CPU:0.0% MEM:93.5%] - [qwen_adapter.py:30] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base on cpu
-2026-02-18 18:11:16,364 - personalization_engine.long_input_test - INFO - [CPU:37.5% MEM:88.6%] - [test_long_input.py:73] - Synthesizing long input (this may take a while)...
-2026-02-18 18:11:16,398 - personalization_engine.qwen_adapter - INFO - [CPU:66.7% MEM:88.6%] - [qwen_adapter.py:46] - Generating audio for text: The quick brown fox jumps over the lazy dog. Artificial intelligence is transforming the way we interact with technology. Voice cloning requires high-quality reference audio and advanced neural networks. The weather today is perfect for a long walk in the park. Modern TTS systems can capture subtle nuances in human speech patterns. Real-time monitoring of CPU and memory usage is essential for performance tuning. Modular architecture allows for easy swapping of internal components. Zero-shot learning enables models to perform tasks they haven't seen explicitly during training. The quick brown fox jumps over the lazy dog. Artificial intelligence is transforming the way we interact with technology. Voice cloning requires high-quality reference audio and advanced neural networks. The weather today is perfect for a long walk in the park. Modern TTS systems can capture subtle nuances in human speech patterns. Real-time monitoring of CPU and memory usage is essential for performance tuning. Modular architecture allows for easy swapping of internal components. Zero-shot learning enables models to perform tasks they haven't seen explicitly during training. The quick brown fox jumps over the lazy dog. Artificial intelligence is transforming the way we interact with technology. Voice cloning requires high-quality reference audio and advanced neural networks. The weather today is perfect for a long walk in the park. Modern TTS systems can capture subtle nuances in human speech patterns. Real-time monitoring of CPU and memory usage is essential for performance tuning. Modular architecture allows for easy swapping of internal components. Zero-shot learning enables models to perform tasks they haven't seen explicitly during training. The quick brown fox jumps over the lazy dog. Artificial intelligence is transforming the way we interact with technology. Voice cloning requires high-quality reference audio and advanced neural networks. The weather today is perfect for a long walk in the park. Modern TTS systems can capture subtle nuances in human speech patterns. Real-time monitoring of CPU and memory usage is essential for performance tuning. Modular architecture allows for easy swapping of internal components. Zero-shot learning enables models to perform tasks they haven't seen explicitly during training. The quick brown fox jumps over the lazy dog. Artificial intelligence is transforming the way we interact with technology. Voice cloning requires high-quality reference audio and advanced neural networks. The weather today is perfect for a long walk in the park. Modern TTS systems can capture subtle nuances in human speech patterns. Real-time monitoring of CPU and memory usage is essential for performance tuning. Modular architecture allows for easy swapping of internal components. Zero-shot learning enables models to perform tasks they haven't seen explicitly during training. The quick brown fox jumps over the lazy dog. Artificial intelligence is transforming the way we interact with technology. Voice cloning requires high-quality reference audio and advanced neural networks. The weather today is perfect for a long walk in the park. Modern TTS systems can capture subtle nuances in human speech patterns. Real-time monitoring of CPU and memory usage is essential for performance tuning. Modular architecture allows for easy swapping of internal components. Zero-shot learning enables models to perform tasks they haven't seen explicitly during training. The quick brown fox jumps over the lazy dog. Artificial intelligence is transforming the way we interact with technology. Voice cloning requires high-quality reference audio and advanced neural networks. The weather today is perfect for a long walk in the park. Modern TTS systems can capture subtle nuances in human speech patterns. Real-time monitoring of CPU and memory usage is essential for performance tuning. Modular architecture allows for easy swapping of internal components. Zero-shot learning enables models to perform tasks they haven't seen explicitly during training. The quick brown fox jumps over the lazy dog. Artificial intelligence is transforming the way we interact with technology. Voice cloning requires high-quality reference audio and advanced neural networks. The weather today is perfect for a long walk in the park. Modern TTS systems can capture subtle nuances in human speech patterns. Real-time monitoring of CPU and memory usage is essential for performance tuning. Modular architecture allows for easy swapping of internal components. Zero-shot learning enables models to perform tasks they haven't seen explicitly during training. The quick brown fox jumps over the lazy dog. Artificial intelligence is transforming the way we interact with technology. Voice cloning requires high-quality reference audio and advanced neural networks. The weather today is perfect for a long walk in the park. Modern TTS systems can capture subtle nuances in human speech patterns. Real-time monitoring of CPU and memory usage is essential for performance tuning. Modular architecture allows for easy swapping of internal components. Zero-shot learning enables models to perform tasks they haven't seen explicitly during training. The quick brown fox jumps over the lazy dog. Artificial intelligence is transforming the way we interact with technology. Voice cloning requires high-quality reference audio and advanced neural networks. The weather today is perfect for a long walk in the park. Modern TTS systems can capture subtle nuances in human speech patterns. Real-time monitoring of CPU and memory usage is essential for performance tuning. Modular architecture allows for easy swapping of internal components. Zero-shot learning enables models to perform tasks they haven't seen explicitly during training. The quick brown fox jumps over the lazy dog. Artificial intelligence is transforming the way we interact with technology. Voice cloning requires high-quality reference audio and advanced neural networks. The weather today is perfect for a long walk in the park. Modern TTS systems can capture subtle nuances in human speech patterns. Real-time monitoring of CPU and memory usage is essential for performance tuning. Modular architecture allows for easy swapping of internal components. Zero-shot learning enables models to perform tasks they haven't seen explicitly during training. The quick brown fox jumps over the lazy dog. Artificial intelligence is transforming the way we interact with technology. Voice cloning requires high-quality reference audio and advanced neural networks. The weather today is perfect for a long walk in the park. Modern TTS systems can capture subtle nuances in human speech patterns. Real-time monitoring
-2026-02-18 18:31:47,281 - qwen_interactive - INFO - [run_qwen_interactive.py:66] - Initialized session for user: current_session_user
-2026-02-18 18:32:48,188 - qwen_interactive - INFO - [run_qwen_interactive.py:75] - Reference audio saved to profiles\current_session_user.wav
-2026-02-18 18:32:50,506 - personalization_engine.emotion_detector - INFO - [emotion_detector.py:206] - Emotion model loaded from models\emotion\svm_model.pkl
-2026-02-18 18:32:50,517 - qwen_interactive - INFO - [run_qwen_interactive.py:107] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base
-2026-02-18 18:32:50,519 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:30] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base on cpu
-2026-02-18 18:33:14,188 - qwen_interactive - INFO - [run_qwen_interactive.py:109] - Model loaded successfully
-2026-02-18 18:33:14,196 - qwen_interactive - INFO - [run_qwen_interactive.py:137] - Starting initial voice analysis
-2026-02-18 18:33:14,378 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:48] - F0 extracted: 485 frames, range: 100.7-140.0 Hz
-2026-02-18 18:33:19,787 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:63] - Energy extracted: 157 frames
-2026-02-18 18:33:20,141 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:78] - Detected 1 silence regions
-2026-02-18 18:33:20,144 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:109] - Speaking pattern analyzed: SpeakingPattern(words_per_minute=150, syllables_per_second=3.75, pause_durations=[0.8], inter_word_delays=[0.8], rhythm_entropy=0)
-2026-02-18 18:33:20,260 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:48] - F0 extracted: 485 frames, range: 100.7-140.0 Hz
-2026-02-18 18:33:20,265 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:63] - Energy extracted: 157 frames
-2026-02-18 18:33:20,387 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:48] - F0 extracted: 485 frames, range: 100.7-140.0 Hz
-2026-02-18 18:33:20,436 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:143] - Emotion features extracted: ['pitch_mean', 'pitch_std', 'pitch_range', 'energy_mean', 'energy_std', 'speaking_rate', 'mfccs']
-2026-02-18 18:33:20,474 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:211] - All features extracted in 6.23s
-2026-02-18 18:33:22,809 - personalization_engine.emotion_detector - INFO - [emotion_detector.py:140] - Detected emotion: angry (confidence: 29.08%)
-2026-02-18 18:33:22,812 - qwen_interactive - INFO - [run_qwen_interactive.py:139] - Initial analysis complete. Detected emotion: angry
-2026-02-18 18:34:31,727 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:46] - Generating audio for text: Hi this praveen from coimbatore currently pursing my b.tech final year in Artificial intelligence and data science
-2026-02-18 18:36:23,795 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:70] - Saved audio to output\cloned_1771419871.wav
-2026-02-18 18:36:23,851 - qwen_interactive - INFO - [logger.py:23] - [Metrics] CPU Usage: 44.7% | Memory Usage: 88.5% (6643.3MB used)
-2026-02-18 18:36:23,865 - qwen_interactive - INFO - [run_qwen_interactive.py:182] - Metadata written to output\cloned_1771419871.json
-2026-02-18 18:36:23,994 - qwen_interactive - INFO - [run_qwen_interactive.py:197] - Validation report saved to output\cloned_1771419871_report.json
-2026-02-18 18:45:41,229 - qwen_interactive - INFO - [run_qwen_interactive.py:66] - Initialized session for user: current_session_user
-2026-02-18 18:46:07,398 - qwen_interactive - INFO - [run_qwen_interactive.py:75] - Reference audio saved to profiles\current_session_user.wav
-2026-02-18 18:46:09,264 - personalization_engine.emotion_detector - INFO - [emotion_detector.py:206] - Emotion model loaded from models\emotion\svm_model.pkl
-2026-02-18 18:46:09,275 - qwen_interactive - INFO - [run_qwen_interactive.py:107] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base
-2026-02-18 18:46:09,279 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:31] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base on cpu
-2026-02-18 18:46:36,104 - personalization_engine - ERROR - [logger.py:68] - [ExecutionError] load_model failed: Cannot specify ',' with 's'.
-Traceback (most recent call last):
-  File "C:\Users\prave\OneDrive\Desktop\Final test\-Personalized-Speech-Learning-using-TTS\personalization_engine\logger.py", line 51, in wrapper
-    result = func(*args, **kwargs)
-             ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\prave\OneDrive\Desktop\Final test\-Personalized-Speech-Learning-using-TTS\personalization_engine\qwen_adapter.py", line 42, in load_model
-    logger.info(f"[ModelMetadata] Loaded {model_id} | Parameters: {num_params:,} | Device: {device}")
-                                                                  ^^^^^^^^^^^^^^
-ValueError: Cannot specify ',' with 's'.
-2026-02-18 18:49:12,126 - qwen_interactive - INFO - [run_qwen_interactive.py:66] - Initialized session for user: current_session_user
-2026-02-18 18:49:41,910 - qwen_interactive - INFO - [run_qwen_interactive.py:75] - Reference audio saved to profiles\current_session_user.wav
-2026-02-18 18:49:43,791 - personalization_engine.emotion_detector - INFO - [emotion_detector.py:206] - Emotion model loaded from models\emotion\svm_model.pkl
-2026-02-18 18:49:43,803 - qwen_interactive - INFO - [run_qwen_interactive.py:107] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base
-2026-02-18 18:49:43,807 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:31] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base on cpu
-2026-02-18 18:50:23,185 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:43] - [ModelMetadata] Loaded Qwen/Qwen3-TTS-12Hz-0.6B-Base | Parameters: Unknown | Device: cpu
-2026-02-18 18:50:23,194 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: QwenModel | Time: O(L * D^2) | Space: O(L * D)
-2026-02-18 18:50:23,199 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] load_model | Duration: 39.3910s | MemDelta: +762.54MB | Result: N/A
-2026-02-18 18:50:23,207 - qwen_interactive - INFO - [run_qwen_interactive.py:109] - Model loaded successfully
-2026-02-18 18:50:23,216 - qwen_interactive - INFO - [run_qwen_interactive.py:137] - Starting initial voice analysis
-2026-02-18 18:50:23,289 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: FeatureExtractor | Time: O(N log N) | Space: O(N)
-2026-02-18 18:50:23,295 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:172] - [InputMetadata] Audio Duration: 5.00s | Samples: 80000 | SR: 16000
-2026-02-18 18:50:23,444 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 575 frames, range: 84.1-177.7 Hz
-2026-02-18 18:50:23,449 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.1517s | MemDelta: +2.85MB | Result: shape=(575,)
-2026-02-18 18:50:30,173 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:65] - Energy extracted: 157 frames
-2026-02-18 18:50:30,176 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_energy | Duration: 6.7219s | MemDelta: +41.77MB | Result: shape=(157,)
-2026-02-18 18:50:30,534 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:80] - Detected 1 silence regions
-2026-02-18 18:50:30,537 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:111] - Speaking pattern analyzed: SpeakingPattern(words_per_minute=150, syllables_per_second=3.75, pause_durations=[0.768], inter_word_delays=[0.768], rhythm_entropy=0)
-2026-02-18 18:50:30,671 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 575 frames, range: 84.1-177.7 Hz
-2026-02-18 18:50:30,674 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.1317s | MemDelta: +0.80MB | Result: shape=(575,)
-2026-02-18 18:50:30,683 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:65] - Energy extracted: 157 frames
-2026-02-18 18:50:30,686 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_energy | Duration: 0.0068s | MemDelta: +0.00MB | Result: shape=(157,)
-2026-02-18 18:50:30,815 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 575 frames, range: 84.1-177.7 Hz
-2026-02-18 18:50:30,819 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.1263s | MemDelta: +0.02MB | Result: shape=(575,)
-2026-02-18 18:50:30,880 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:146] - Emotion features extracted: ['pitch_mean', 'pitch_std', 'pitch_range', 'energy_mean', 'energy_std', 'speaking_rate', 'mfccs']
-2026-02-18 18:50:30,884 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_emotion_features | Duration: 0.3412s | MemDelta: +2.57MB | Result: len=7
-2026-02-18 18:50:30,932 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:219] - All features extracted in 7.63s
-2026-02-18 18:50:30,936 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_all_features | Duration: 7.6478s | MemDelta: +50.54MB | Result: len=5
-2026-02-18 18:50:33,748 - personalization_engine.emotion_detector - INFO - [emotion_detector.py:140] - Detected emotion: angry (confidence: 29.60%)
-2026-02-18 18:50:33,751 - qwen_interactive - INFO - [run_qwen_interactive.py:139] - Initial analysis complete. Detected emotion: angry
-2026-02-18 18:51:51,573 - personalization_engine.qwen_adapter - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 53.8% | Memory Usage: 86.2% (6464.1MB used)
-2026-02-18 18:51:51,581 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: QwenInference | Time: O(Tokens * Model_Size) | Space: O(K_V_Cache)
-2026-02-18 18:51:51,588 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:56] - Generating audio for text: This is praveen from coimbatore how are you
-2026-02-18 18:53:50,866 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:80] - Saved audio to output\cloned_1771420911.wav
-2026-02-18 18:53:50,995 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] generate_audio | Duration: 119.4164s | MemDelta: +1624.72MB | Result: len=28
-2026-02-18 18:53:51,033 - qwen_interactive - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 96.2% | Memory Usage: 91.2% (6840.0MB used)
-2026-02-18 18:53:51,061 - qwen_interactive - INFO - [run_qwen_interactive.py:182] - Metadata written to output\cloned_1771420911.json
-2026-02-18 18:53:51,357 - qwen_interactive - INFO - [run_qwen_interactive.py:197] - Validation report saved to output\cloned_1771420911_report.json
-2026-02-19 07:43:09,054 - qwen_interactive - INFO - [run_qwen_interactive.py:66] - Initialized session for user: current_session_user
-2026-02-19 07:44:38,026 - qwen_interactive - INFO - [run_qwen_interactive.py:75] - Reference audio saved to profiles\current_session_user.wav
-2026-02-19 07:44:42,074 - personalization_engine.emotion_detector - INFO - [emotion_detector.py:206] - Emotion model loaded from models\emotion\svm_model.pkl
-2026-02-19 07:44:42,085 - qwen_interactive - INFO - [run_qwen_interactive.py:107] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base
-2026-02-19 07:44:42,089 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:31] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base on cpu
-2026-02-19 07:45:08,577 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:43] - [ModelMetadata] Loaded Qwen/Qwen3-TTS-12Hz-0.6B-Base | Parameters: Unknown | Device: cpu
-2026-02-19 07:45:08,585 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: QwenModel | Time: O(L * D^2) | Space: O(L * D)
-2026-02-19 07:45:08,591 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] load_model | Duration: 26.5004s | MemDelta: +1063.68MB | Result: N/A
-2026-02-19 07:45:08,598 - qwen_interactive - INFO - [run_qwen_interactive.py:109] - Model loaded successfully
-2026-02-19 07:45:08,608 - qwen_interactive - INFO - [run_qwen_interactive.py:137] - Starting initial voice analysis
-2026-02-19 07:45:08,670 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: FeatureExtractor | Time: O(N log N) | Space: O(N)
-2026-02-19 07:45:08,673 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:172] - [InputMetadata] Audio Duration: 5.00s | Samples: 80000 | SR: 16000
-2026-02-19 07:45:08,839 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 629 frames, range: 75.5-160.1 Hz
-2026-02-19 07:45:08,841 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.1645s | MemDelta: +2.43MB | Result: shape=(629,)
-2026-02-19 07:45:15,222 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:65] - Energy extracted: 157 frames
-2026-02-19 07:45:15,226 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_energy | Duration: 6.3811s | MemDelta: +39.13MB | Result: shape=(157,)
-2026-02-19 07:45:16,301 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:80] - Detected 2 silence regions
-2026-02-19 07:45:16,315 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:111] - Speaking pattern analyzed: SpeakingPattern(words_per_minute=150, syllables_per_second=3.75, pause_durations=[0.32, 0.512], inter_word_delays=[0.32, 0.512], rhythm_entropy=0.6931471805599453)
-2026-02-19 07:45:16,440 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 629 frames, range: 75.5-160.1 Hz
-2026-02-19 07:45:16,443 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.1240s | MemDelta: +0.73MB | Result: shape=(629,)
-2026-02-19 07:45:16,449 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:65] - Energy extracted: 157 frames
-2026-02-19 07:45:16,454 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_energy | Duration: 0.0074s | MemDelta: +0.61MB | Result: shape=(157,)
-2026-02-19 07:45:16,595 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 629 frames, range: 75.5-160.1 Hz
-2026-02-19 07:45:16,598 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.1399s | MemDelta: +0.02MB | Result: shape=(629,)
-2026-02-19 07:45:16,641 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:146] - Emotion features extracted: ['pitch_mean', 'pitch_std', 'pitch_range', 'energy_mean', 'energy_std', 'speaking_rate', 'mfccs']
-2026-02-19 07:45:16,646 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_emotion_features | Duration: 0.3274s | MemDelta: +2.57MB | Result: len=7
-2026-02-19 07:45:16,685 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:219] - All features extracted in 8.01s
-2026-02-19 07:45:16,690 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_all_features | Duration: 8.0181s | MemDelta: +48.42MB | Result: len=5
-2026-02-19 07:45:19,180 - personalization_engine.emotion_detector - INFO - [emotion_detector.py:140] - Detected emotion: angry (confidence: 29.08%)
-2026-02-19 07:45:19,184 - qwen_interactive - INFO - [run_qwen_interactive.py:139] - Initial analysis complete. Detected emotion: angry
-2026-02-19 07:45:28,825 - personalization_engine.qwen_adapter - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 34.5% | Memory Usage: 80.4% (6030.9MB used)
-2026-02-19 07:45:28,828 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: QwenInference | Time: O(Tokens * Model_Size) | Space: O(K_V_Cache)
-2026-02-19 07:45:28,831 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:56] - Generating audio for text: Life is a journey that constantly tests our patience, courage, determination, and belief in ourselves, and as we move from one phase to another, whether it is childhood filled with curiosity and imagination, adolescence filled with confusion and discovery, or adulthood filled with responsibility and ambition, we begin to understand that success is not merely about achieving high grades, earning a prestigious job, or gaining recognition from society, but rather about building resilience in moments of failure, learning from mistakes that initially seem unbearable, embracing challenges that push us outside our comfort zone, maintaining integrity even when shortcuts appear tempting, nurturing relationships that provide emotional strength, cultivating discipline in daily habits that shape long term growth, developing emotional intelligence to handle criticism and rejection gracefully, staying adaptable in a rapidly evolving world influenced by technology and competition, prioritizing physical and mental well being despite busy schedules, understanding that comparison with others often steals joy, practicing gratitude for small achievements that accumulate over time, taking calculated risks that expand opportunities, accepting uncertainty as a natural part of progress, refining communication skills that strengthen personal and professional bonds, balancing ambition with humility to remain grounded, setting realistic goals while dreaming boldly, seeking knowledge continuously whether through books, mentors, experiences, or failures, and recognizing that true growth happens gradually through consistent effort rather than overnight transformation, because every setback carries within it a hidden lesson that prepares us for greater responsibilities, every criticism offers a chance to improve if we listen carefully instead of reacting defensively, every delay teaches patience that becomes invaluable in leadership roles, every collaboration reveals the importance of teamwork and mutual respect, every innovation stems from curiosity that refuses to accept limitations, and every meaningful accomplishment is built upon countless small disciplined actions repeated daily, so when doubts arise and motivation seems to fade, it is essential to remember the original purpose that ignited the journey, to revisit personal values that define character, to reconnect with supportive individuals who provide perspective, to reflect on progress already made rather than focusing solely on what remains unfinished, to celebrate incremental improvements that build confidence, to learn from mentors who have navigated similar paths, to embrace constructive feedback that accelerates development, to strengthen adaptability in the face of changing circumstances, to cultivate patience when results are not immediate, to persist even when outcomes are uncertain, to remain ethical when faced with competitive pressure, to value time as a limited and irreplaceable resource, to prioritize meaningful work over superficial validation, to maintain optimism grounded in realistic planning, to develop problem solving skills that transform obstacles into opportunities, to invest in continuous self improvement through deliberate practice, to manage stress with healthy coping strategies such as exercise, reflection, or mindful breaks, to build financial discipline that ensures long term stability, to foster creativity by exploring diverse perspectives, to communicate ideas clearly and confidently, to listen actively in conversations that deepen understanding, to resolve conflicts calmly without escalating tension, to mentor others when capable of sharing experience, to accept leadership roles with responsibility rather than ego, to acknowledge weaknesses honestly while working systematically to overcome them, to remain curious about emerging technologies and global trends, to strengthen analytical thinking for informed decision making, to practice empathy that strengthens relationships, to remain consistent in efforts even when external validation is absent, to view competition as motivation rather than intimidation, to remain grateful for opportunities that once seemed distant dreams, to reflect periodically on personal growth to maintain alignment with long term aspirations, and ultimately to realize that fulfillment is not defined solely by external achievements but by the internal satisfaction of knowing that each day was approached with sincerity, discipline, courage, and a commitment to becoming a better version of oneself.
-2026-02-19 11:26:07,873 - qwen_interactive - INFO - [run_qwen_interactive.py:66] - Initialized session for user: current_session_user
-2026-02-19 11:27:16,423 - qwen_interactive - INFO - [run_qwen_interactive.py:75] - Reference audio saved to profiles\current_session_user.wav
-2026-02-19 11:27:20,423 - personalization_engine.emotion_detector - INFO - [emotion_detector.py:206] - Emotion model loaded from models\emotion\svm_model.pkl
-2026-02-19 11:27:20,433 - qwen_interactive - INFO - [run_qwen_interactive.py:107] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base
-2026-02-19 11:27:20,437 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:31] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base on cpu
-2026-02-19 11:27:45,902 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:43] - [ModelMetadata] Loaded Qwen/Qwen3-TTS-12Hz-0.6B-Base | Parameters: Unknown | Device: cpu
-2026-02-19 11:27:45,910 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: QwenModel | Time: O(L * D^2) | Space: O(L * D)
-2026-02-19 11:27:45,916 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] load_model | Duration: 25.4773s | MemDelta: +492.83MB | Result: N/A
-2026-02-19 11:27:45,922 - qwen_interactive - INFO - [run_qwen_interactive.py:109] - Model loaded successfully
-2026-02-19 11:27:45,931 - qwen_interactive - INFO - [run_qwen_interactive.py:137] - Starting initial voice analysis
-2026-02-19 11:27:45,974 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: FeatureExtractor | Time: O(N log N) | Space: O(N)
-2026-02-19 11:27:45,998 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:172] - [InputMetadata] Audio Duration: 5.00s | Samples: 80000 | SR: 16000
-2026-02-19 11:27:46,244 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 564 frames, range: 71.0-267.5 Hz
-2026-02-19 11:27:46,248 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.1731s | MemDelta: +1.85MB | Result: shape=(564,)
-2026-02-19 11:27:52,867 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:65] - Energy extracted: 157 frames
-2026-02-19 11:27:52,870 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_energy | Duration: 6.6191s | MemDelta: +40.34MB | Result: shape=(157,)
-2026-02-19 11:27:53,967 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:80] - Detected 3 silence regions
-2026-02-19 11:27:53,983 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:111] - Speaking pattern analyzed: SpeakingPattern(words_per_minute=150, syllables_per_second=3.75, pause_durations=[1.056, 0.32, 0.256], inter_word_delays=[1.056, 0.32, 0.256], rhythm_entropy=0.6365141682948128)
-2026-02-19 11:27:54,131 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 564 frames, range: 71.0-267.5 Hz
-2026-02-19 11:27:54,134 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.1477s | MemDelta: +1.18MB | Result: shape=(564,)
-2026-02-19 11:27:54,141 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:65] - Energy extracted: 157 frames
-2026-02-19 11:27:54,144 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_energy | Duration: 0.0057s | MemDelta: +0.61MB | Result: shape=(157,)
-2026-02-19 11:27:54,282 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 564 frames, range: 71.0-267.5 Hz
-2026-02-19 11:27:54,284 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.1318s | MemDelta: +0.02MB | Result: shape=(564,)
-2026-02-19 11:27:54,342 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:146] - Emotion features extracted: ['pitch_mean', 'pitch_std', 'pitch_range', 'energy_mean', 'energy_std', 'speaking_rate', 'mfccs']
-2026-02-19 11:27:54,346 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_emotion_features | Duration: 0.3597s | MemDelta: +4.13MB | Result: len=7
-2026-02-19 11:27:54,396 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:219] - All features extracted in 8.32s
-2026-02-19 11:27:54,399 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_all_features | Duration: 8.4251s | MemDelta: +49.56MB | Result: len=5
-2026-02-19 11:27:56,853 - personalization_engine.emotion_detector - INFO - [emotion_detector.py:140] - Detected emotion: angry (confidence: 29.10%)
-2026-02-19 11:27:56,856 - qwen_interactive - INFO - [run_qwen_interactive.py:139] - Initial analysis complete. Detected emotion: angry
-2026-02-19 11:30:16,402 - personalization_engine.qwen_adapter - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 25.7% | Memory Usage: 86.3% (6476.0MB used)
-2026-02-19 11:30:16,406 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: QwenInference | Time: O(Tokens * Model_Size) | Space: O(K_V_Cache)
-2026-02-19 11:30:16,410 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:56] - Generating audio for text: Life is a journey that constantly tests our patience, courage, determination, and belief in ourselves, and as we move from one phase to another, whether it is childhood filled with curiosity and imagination, adolescence filled with confusion and discovery, or adulthood filled with responsibility and ambition, we begin to understand that success is not merely about achieving high grades, earning a prestigious job, or gaining recognition from society, but rather about building resilience in moments of failure, learning from mistakes that initially seem unbearable, embracing challenges that push us outside our comfort zone, maintaining integrity even when shortcuts appear tempting, nurturing relationships that provide emotional strength, cultivating discipline in daily habits that shape long term growth, developing emotional intelligence to handle criticism and rejection gracefully, staying adaptable in a rapidly evolving world influenced by technology and competition, prioritizing physical and mental well being despite busy schedules, understanding that comparison with others often steals joy, practicing gratitude for small achievements that accumulate over time, taking calculated risks that expand opportunities, accepting uncertainty as a natural part of progress, refining communication skills that strengthen personal and professional bonds, balancing ambition with humility to remain grounded, setting realistic goals while dreaming boldly, seeking knowledge continuously whether through books, mentors, experiences, or failures, and recognizing that true growth happens gradually through consistent effort rather than overnight transformation, because every setback carries within it a hidden lesson that prepares us for greater responsibilities, every criticism offers a chance to improve if we listen carefully instead of reacting defensively, every delay teaches patience that becomes invaluable in leadership roles, every collaboration reveals the importance of teamwork and mutual respect, every innovation stems from curiosity that refuses to accept limitations, and every meaningful accomplishment is built upon countless small disciplined actions repeated daily, so when doubts arise and motivation seems to fade, it is essential to remember the original purpose that ignited the journey, to revisit personal values that define character, to reconnect with supportive individuals who provide perspective, to reflect on progress already made rather than focusing solely on what remains unfinished, to celebrate incremental improvements that build confidence, to learn from mentors who have navigated similar paths, to embrace constructive feedback that accelerates development, to strengthen adaptability in the face of changing circumstances, to cultivate patience when results are not immediate, to persist even when outcomes are uncertain, to remain ethical when faced with competitive pressure, to value time as a limited and irreplaceable resource, to prioritize meaningful work over superficial validation, to maintain optimism grounded in realistic planning, to develop problem solving skills that transform obstacles into opportunities, to invest in continuous self improvement through deliberate practice, to manage stress with healthy coping strategies such as exercise, reflection, or mindful breaks, to build financial discipline that ensures long term stability, to foster creativity by exploring diverse perspectives, to communicate ideas clearly and confidently, to listen actively in conversations that deepen understanding, to resolve conflicts calmly without escalating tension, to mentor others when capable of sharing experience, to accept leadership roles with responsibility rather than ego, to acknowledge weaknesses honestly while working systematically to overcome them, to remain curious about emerging technologies and global trends, to strengthen analytical thinking for informed decision making, to practice empathy that strengthens relationships, to remain consistent in efforts even when external validation is absent, to view competition as motivation rather than intimidation, to remain grateful for opportunities that once seemed distant dreams, to reflect periodically on personal growth to maintain alignment with long term aspirations, and ultimately to realize that fulfillment is not defined solely by external achievements but by the internal satisfaction of knowing that each day was approached with sincerity, discipline, courage, and a commitment to becoming a better version of oneself.
-2026-02-19 12:58:34,130 - qwen_interactive - INFO - [run_qwen_interactive.py:66] - Initialized session for user: current_session_user
-2026-02-19 12:59:58,828 - qwen_interactive - INFO - [run_qwen_interactive.py:75] - Reference audio saved to profiles\current_session_user.wav
-2026-02-19 13:00:02,606 - personalization_engine.emotion_detector - INFO - [emotion_detector.py:206] - Emotion model loaded from models\emotion\svm_model.pkl
-2026-02-19 13:00:02,615 - qwen_interactive - INFO - [run_qwen_interactive.py:107] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base
-2026-02-19 13:00:02,618 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:31] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base on cpu
-2026-02-19 13:00:24,822 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:43] - [ModelMetadata] Loaded Qwen/Qwen3-TTS-12Hz-0.6B-Base | Parameters: Unknown | Device: cpu
-2026-02-19 13:00:24,829 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: QwenModel | Time: O(L * D^2) | Space: O(L * D)
-2026-02-19 13:00:24,835 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] load_model | Duration: 22.2150s | MemDelta: +1025.18MB | Result: N/A
-2026-02-19 13:00:24,841 - qwen_interactive - INFO - [run_qwen_interactive.py:109] - Model loaded successfully
-2026-02-19 13:00:24,848 - qwen_interactive - INFO - [run_qwen_interactive.py:137] - Starting initial voice analysis
-2026-02-19 13:00:24,888 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: FeatureExtractor | Time: O(N log N) | Space: O(N)
-2026-02-19 13:00:24,891 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:172] - [InputMetadata] Audio Duration: 5.00s | Samples: 80000 | SR: 16000
-2026-02-19 13:00:25,004 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 509 frames, range: 78.8-223.3 Hz
-2026-02-19 13:00:25,010 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.1157s | MemDelta: +1.90MB | Result: shape=(509,)
-2026-02-19 13:00:30,841 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:65] - Energy extracted: 157 frames
-2026-02-19 13:00:30,843 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_energy | Duration: 5.8299s | MemDelta: +38.73MB | Result: shape=(157,)
-2026-02-19 13:00:31,898 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:80] - Detected 5 silence regions
-2026-02-19 13:00:31,908 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:111] - Speaking pattern analyzed: SpeakingPattern(words_per_minute=150, syllables_per_second=3.75, pause_durations=[0.064, 0.064, 0.128, 0.096, 0.352], inter_word_delays=[0.064, 0.064, 0.128, 0.096, 0.352], rhythm_entropy=1.3321790402101223)
-2026-02-19 13:00:32,017 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 509 frames, range: 78.8-223.3 Hz
-2026-02-19 13:00:32,019 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.1071s | MemDelta: +0.78MB | Result: shape=(509,)
-2026-02-19 13:00:32,024 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:65] - Energy extracted: 157 frames
-2026-02-19 13:00:32,028 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_energy | Duration: 0.0062s | MemDelta: +0.00MB | Result: shape=(157,)
-2026-02-19 13:00:32,139 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 509 frames, range: 78.8-223.3 Hz
-2026-02-19 13:00:32,142 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.1091s | MemDelta: +0.00MB | Result: shape=(509,)
-2026-02-19 13:00:32,182 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:146] - Emotion features extracted: ['pitch_mean', 'pitch_std', 'pitch_range', 'energy_mean', 'energy_std', 'speaking_rate', 'mfccs']
-2026-02-19 13:00:32,184 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_emotion_features | Duration: 0.2722s | MemDelta: +1.90MB | Result: len=7
-2026-02-19 13:00:32,220 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:219] - All features extracted in 7.33s
-2026-02-19 13:00:32,222 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_all_features | Duration: 7.3345s | MemDelta: +46.41MB | Result: len=5
-2026-02-19 13:00:34,307 - personalization_engine.emotion_detector - INFO - [emotion_detector.py:140] - Detected emotion: angry (confidence: 29.21%)
-2026-02-19 13:00:34,310 - qwen_interactive - INFO - [run_qwen_interactive.py:139] - Initial analysis complete. Detected emotion: angry
-2026-02-19 13:02:11,022 - personalization_engine.qwen_adapter - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 17.0% | Memory Usage: 79.8% (5989.7MB used)
-2026-02-19 13:02:11,025 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: QwenInference | Time: O(Tokens * Model_Size) | Space: O(K_V_Cache)
-2026-02-19 13:02:11,029 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:56] - Generating audio for text: Life is a journey that constantly tests our patience, courage, determination, and belief in ourselves, and as we move from one phase to another, whether it is childhood filled with curiosity and imagination, adolescence filled with confusion and discovery, or adulthood filled with responsibility and ambition, we begin to understand that success is not merely about achieving high grades, earning a prestigious job, or gaining recognition from society, but rather about building resilience in moments of failure, learning from mistakes that initially seem unbearable, embracing challenges that push us outside our comfort zone, maintaining integrity even when shortcuts appear tempting, nurturing relationships that provide emotional strength, cultivating discipline in daily habits that shape long term growth, developing emotional intelligence to handle criticism and rejection gracefully, staying adaptable in a rapidly evolving world influenced by technology and competition, prioritizing physical and mental well being despite busy schedules, understanding that comparison with others often steals joy, practicing gratitude for small achievements that accumulate over time, taking calculated risks that expand opportunities, accepting uncertainty as a natural part of progress, refining communication skills that strengthen personal and professional bonds, balancing ambition with humility to remain grounded, setting realistic goals while dreaming boldly, seeking knowledge continuously whether through books, mentors, experiences, or failures, and recognizing that true growth happens gradually through consistent effort rather than overnight transformation, because every setback carries within it a hidden lesson that prepares us for greater responsibilities, every criticism offers a chance to improve if we listen carefully instead of reacting defensively, every delay teaches patience that becomes invaluable in leadership roles, every collaboration reveals the importance of teamwork and mutual respect, every innovation stems from curiosity that refuses to accept limitations, and every meaningful accomplishment is built upon countless small disciplined actions repeated daily, so when doubts arise and motivation seems to fade, it is essential to remember the original purpose that ignited the journey, to revisit personal values that define character, to reconnect with supportive individuals who provide perspective, to reflect on progress already made rather than focusing solely on what remains unfinished, to celebrate incremental improvements that build confidence, to learn from mentors who have navigated similar paths, to embrace constructive feedback that accelerates development, to strengthen adaptability in the face of changing circumstances, to cultivate patience when results are not immediate, to persist even when outcomes are uncertain, to remain ethical when faced with competitive pressure, to value time as a limited and irreplaceable resource, to prioritize meaningful work over superficial validation, to maintain optimism grounded in realistic planning, to develop problem solving skills that transform obstacles into opportunities, to invest in continuous self improvement through deliberate practice, to manage stress with healthy coping strategies such as exercise, reflection, or mindful breaks, to build financial discipline that ensures long term stability, to foster creativity by exploring diverse perspectives, to communicate ideas clearly and confidently, to listen actively in conversations that deepen understanding, to resolve conflicts calmly without escalating tension, to mentor others when capable of sharing experience, to accept leadership roles with responsibility rather than ego, to acknowledge weaknesses honestly while working systematically to overcome them, to remain curious about emerging technologies and global trends, to strengthen analytical thinking for informed decision making, to practice empathy that strengthens relationships, to remain consistent in efforts even when external validation is absent, to view competition as motivation rather than intimidation, to remain grateful for opportunities that once seemed distant dreams, to reflect periodically on personal growth to maintain alignment with long term aspirations, and ultimately to realize that fulfillment is not defined solely by external achievements but by the internal satisfaction of knowing that each day was approached with sincerity, discipline, courage, and a commitment to becoming a better version of oneself.
-2026-02-19 18:55:31,770 - qwen_interactive - INFO - [run_qwen_interactive.py:66] - Initialized session for user: current_session_user
-2026-02-19 18:55:48,444 - qwen_interactive - INFO - [run_qwen_interactive.py:75] - Reference audio saved to profiles\current_session_user.wav
-2026-02-19 18:55:50,668 - personalization_engine.emotion_detector - INFO - [emotion_detector.py:206] - Emotion model loaded from models\emotion\svm_model.pkl
-2026-02-19 18:55:50,680 - qwen_interactive - INFO - [run_qwen_interactive.py:107] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base
-2026-02-19 18:55:50,683 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:31] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base on cpu
-2026-02-19 18:56:27,294 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:43] - [ModelMetadata] Loaded Qwen/Qwen3-TTS-12Hz-0.6B-Base | Parameters: Unknown | Device: cpu
-2026-02-19 18:56:27,322 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: QwenModel | Time: O(L * D^2) | Space: O(L * D)
-2026-02-19 18:56:27,357 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] load_model | Duration: 36.6652s | MemDelta: +1625.90MB | Result: N/A
-2026-02-19 18:56:27,409 - qwen_interactive - INFO - [run_qwen_interactive.py:109] - Model loaded successfully
-2026-02-19 18:56:27,432 - qwen_interactive - INFO - [run_qwen_interactive.py:137] - Starting initial voice analysis
-2026-02-19 18:56:28,680 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: FeatureExtractor | Time: O(N log N) | Space: O(N)
-2026-02-19 18:56:28,700 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:172] - [InputMetadata] Audio Duration: 5.00s | Samples: 80000 | SR: 16000
-2026-02-19 18:56:29,184 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 589 frames, range: 83.3-245.6 Hz
-2026-02-19 18:56:29,194 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.4780s | MemDelta: +2.50MB | Result: shape=(589,)
-2026-02-19 18:56:40,590 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:65] - Energy extracted: 157 frames
-2026-02-19 18:56:40,596 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_energy | Duration: 11.3880s | MemDelta: -88.46MB | Result: shape=(157,)
-2026-02-19 18:56:41,003 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:80] - Detected 2 silence regions
-2026-02-19 18:56:41,017 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:111] - Speaking pattern analyzed: SpeakingPattern(words_per_minute=150, syllables_per_second=3.75, pause_durations=[0.16, 0.736], inter_word_delays=[0.16, 0.736], rhythm_entropy=0.6931471805599453)
-2026-02-19 18:56:41,188 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 589 frames, range: 83.3-245.6 Hz
-2026-02-19 18:56:41,191 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.1679s | MemDelta: +1.21MB | Result: shape=(589,)
-2026-02-19 18:56:41,198 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:65] - Energy extracted: 157 frames
-2026-02-19 18:56:41,203 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_energy | Duration: 0.0083s | MemDelta: +0.02MB | Result: shape=(157,)
-2026-02-19 18:56:41,361 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 589 frames, range: 83.3-245.6 Hz
-2026-02-19 18:56:41,365 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.1563s | MemDelta: +0.33MB | Result: shape=(589,)
-2026-02-19 18:56:41,435 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:146] - Emotion features extracted: ['pitch_mean', 'pitch_std', 'pitch_range', 'energy_mean', 'energy_std', 'speaking_rate', 'mfccs']
-2026-02-19 18:56:41,441 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_emotion_features | Duration: 0.4173s | MemDelta: +2.93MB | Result: len=7
-2026-02-19 18:56:41,498 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:219] - All features extracted in 12.78s
-2026-02-19 18:56:41,504 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_all_features | Duration: 12.8236s | MemDelta: -79.62MB | Result: len=5
-2026-02-19 18:56:44,930 - personalization_engine.emotion_detector - INFO - [emotion_detector.py:140] - Detected emotion: angry (confidence: 29.10%)
-2026-02-19 18:56:44,936 - qwen_interactive - INFO - [run_qwen_interactive.py:139] - Initial analysis complete. Detected emotion: angry
-2026-02-19 18:57:31,531 - personalization_engine.qwen_adapter - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 53.4% | Memory Usage: 90.9% (6818.0MB used)
-2026-02-19 18:57:31,534 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: QwenInference | Time: O(Tokens * Model_Size) | Space: O(K_V_Cache)
-2026-02-19 18:57:31,541 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:96] - Processing text in 6 chunks
-2026-02-19 18:57:31,544 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:102] - Synthesizing chunk 1/6: Life is a journey that constantly tests our patien...
-2026-02-19 19:04:38,652 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:102] - Synthesizing chunk 2/6: earning a prestigious job, or gaining recognition ...
-2026-02-19 19:12:35,155 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:102] - Synthesizing chunk 3/6: cultivating discipline in daily habits that shape ...
-2026-02-19 19:19:35,623 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:102] - Synthesizing chunk 4/6: practicing gratitude for small achievements that a...
-2026-02-19 19:25:05,108 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:102] - Synthesizing chunk 5/6: seeking knowledge continuously whether through boo...
-2026-02-19 19:31:35,503 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:102] - Synthesizing chunk 6/6: every criticism offers a chance to improve if we l...
-2026-02-19 19:39:24,449 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:132] - Saved concatenated audio to output\cloned_1771507651.wav
-2026-02-19 19:39:24,667 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] generate_audio | Duration: 2513.1211s | MemDelta: +629.31MB | Result: len=28
-2026-02-19 19:39:24,706 - qwen_interactive - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 84.6% | Memory Usage: 92.6% (6946.6MB used)
-2026-02-19 19:39:24,747 - qwen_interactive - INFO - [run_qwen_interactive.py:182] - Metadata written to output\cloned_1771507651.json
-2026-02-19 19:39:25,469 - qwen_interactive - INFO - [run_qwen_interactive.py:197] - Validation report saved to output\cloned_1771507651_report.json
-2026-02-21 12:27:02,418 - qwen_interactive - INFO - [run_qwen_interactive.py:66] - Initialized session for user: current_session_user
-2026-02-21 12:27:39,747 - qwen_interactive - INFO - [run_qwen_interactive.py:75] - Reference audio saved to profiles\current_session_user.wav
-2026-02-21 12:27:41,448 - personalization_engine.emotion_detector - INFO - [emotion_detector.py:206] - Emotion model loaded from models\emotion\svm_model.pkl
-2026-02-21 12:27:41,459 - qwen_interactive - INFO - [run_qwen_interactive.py:107] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base
-2026-02-21 12:27:41,463 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:31] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base on cpu
-2026-02-21 12:28:13,512 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:43] - [ModelMetadata] Loaded Qwen/Qwen3-TTS-12Hz-0.6B-Base | Parameters: Unknown | Device: cpu
-2026-02-21 12:28:13,518 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: QwenModel | Time: O(L * D^2) | Space: O(L * D)
-2026-02-21 12:28:13,523 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] load_model | Duration: 32.0605s | MemDelta: +713.50MB | Result: N/A
-2026-02-21 12:28:13,530 - qwen_interactive - INFO - [run_qwen_interactive.py:109] - Model loaded successfully
-2026-02-21 12:28:13,537 - qwen_interactive - INFO - [run_qwen_interactive.py:137] - Starting initial voice analysis
-2026-02-21 12:28:13,601 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: FeatureExtractor | Time: O(N log N) | Space: O(N)
-2026-02-21 12:28:13,605 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:172] - [InputMetadata] Audio Duration: 5.00s | Samples: 80000 | SR: 16000
-2026-02-21 12:28:13,758 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 464 frames, range: 81.9-313.4 Hz
-2026-02-21 12:28:13,762 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.1540s | MemDelta: +1.78MB | Result: shape=(464,)
-2026-02-21 12:28:19,385 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:65] - Energy extracted: 157 frames
-2026-02-21 12:28:19,388 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_energy | Duration: 5.6237s | MemDelta: +37.46MB | Result: shape=(157,)
-2026-02-21 12:28:19,668 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:80] - Detected 4 silence regions
-2026-02-21 12:28:19,681 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:111] - Speaking pattern analyzed: SpeakingPattern(words_per_minute=150, syllables_per_second=3.75, pause_durations=[0.096, 0.352, 0.128, 0.288], inter_word_delays=[0.096, 0.352, 0.128, 0.288], rhythm_entropy=1.3862943611198906)
-2026-02-21 12:28:19,794 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 464 frames, range: 81.9-313.4 Hz
-2026-02-21 12:28:19,797 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.1117s | MemDelta: +0.76MB | Result: shape=(464,)
-2026-02-21 12:28:19,802 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:65] - Energy extracted: 157 frames
-2026-02-21 12:28:19,805 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_energy | Duration: 0.0048s | MemDelta: +0.00MB | Result: shape=(157,)
-2026-02-21 12:28:19,914 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 464 frames, range: 81.9-313.4 Hz
-2026-02-21 12:28:19,918 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.1097s | MemDelta: +0.01MB | Result: shape=(464,)
-2026-02-21 12:28:19,961 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:146] - Emotion features extracted: ['pitch_mean', 'pitch_std', 'pitch_range', 'energy_mean', 'energy_std', 'speaking_rate', 'mfccs']
-2026-02-21 12:28:19,965 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_emotion_features | Duration: 0.2794s | MemDelta: +1.81MB | Result: len=7
-2026-02-21 12:28:20,003 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:219] - All features extracted in 6.40s
-2026-02-21 12:28:20,006 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_all_features | Duration: 6.4052s | MemDelta: +44.68MB | Result: len=5
-2026-02-21 12:28:22,175 - personalization_engine.emotion_detector - INFO - [emotion_detector.py:140] - Detected emotion: angry (confidence: 29.90%)
-2026-02-21 12:28:22,179 - qwen_interactive - INFO - [run_qwen_interactive.py:139] - Initial analysis complete. Detected emotion: angry
-2026-02-21 12:28:43,667 - personalization_engine.qwen_adapter - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 27.2% | Memory Usage: 82.8% (6211.0MB used)
-2026-02-21 12:28:43,670 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: QwenInference | Time: O(Tokens * Model_Size) | Space: O(K_V_Cache)
-2026-02-21 12:28:43,678 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:96] - Processing text in 1 chunks
-2026-02-21 12:28:43,687 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:102] - Synthesizing chunk 1/1: This is Praveen from Coimbatore...
-2026-02-21 12:29:27,619 - personalization_engine.qwen_adapter - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 73.1% | Memory Usage: 87.0% (6527.5MB used)
-2026-02-21 12:29:27,644 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:133] - Saved concatenated audio to output\cloned_1771657123.wav
-2026-02-21 12:29:27,651 - personalization_engine.qwen_adapter - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 58.8% | Memory Usage: 87.0% (6527.1MB used)
-2026-02-21 12:29:27,656 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] generate_audio | Duration: 43.9905s | MemDelta: +1662.37MB | Result: len=28
-2026-02-21 12:29:27,661 - qwen_interactive - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 62.5% | Memory Usage: 87.0% (6527.1MB used)
-2026-02-21 12:29:27,670 - qwen_interactive - INFO - [run_qwen_interactive.py:182] - Metadata written to output\cloned_1771657123.json
-2026-02-21 12:29:27,746 - qwen_interactive - INFO - [run_qwen_interactive.py:197] - Validation report saved to output\cloned_1771657123_report.json
-2026-02-23 19:14:16,942 - qwen_interactive - INFO - [run_qwen_interactive.py:66] - Initialized session for user: current_session_user
-2026-02-23 19:16:36,018 - qwen_interactive - INFO - [run_qwen_interactive.py:75] - Reference audio saved to profiles\current_session_user.wav
-2026-02-23 19:16:39,437 - personalization_engine.emotion_detector - INFO - [emotion_detector.py:206] - Emotion model loaded from models\emotion\svm_model.pkl
-2026-02-23 19:16:39,442 - qwen_interactive - INFO - [run_qwen_interactive.py:107] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base
-2026-02-23 19:16:39,445 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:31] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base on cpu
-2026-02-23 19:17:02,068 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:43] - [ModelMetadata] Loaded Qwen/Qwen3-TTS-12Hz-0.6B-Base | Parameters: Unknown | Device: cpu
-2026-02-23 19:17:02,075 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: QwenModel | Time: O(L * D^2) | Space: O(L * D)
-2026-02-23 19:17:02,078 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] load_model | Duration: 22.6324s | MemDelta: +641.81MB | Result: N/A
-2026-02-23 19:17:02,084 - qwen_interactive - INFO - [run_qwen_interactive.py:109] - Model loaded successfully
-2026-02-23 19:17:02,092 - qwen_interactive - INFO - [run_qwen_interactive.py:137] - Starting initial voice analysis
-2026-02-23 19:17:02,135 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: FeatureExtractor | Time: O(N log N) | Space: O(N)
-2026-02-23 19:17:02,140 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:172] - [InputMetadata] Audio Duration: 5.00s | Samples: 80000 | SR: 16000
-2026-02-23 19:17:02,303 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 532 frames, range: 103.0-211.6 Hz
-2026-02-23 19:17:02,307 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.1642s | MemDelta: +1.45MB | Result: shape=(532,)
-2026-02-23 19:17:06,824 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:65] - Energy extracted: 157 frames
-2026-02-23 19:17:06,827 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_energy | Duration: 4.5159s | MemDelta: +37.67MB | Result: shape=(157,)
-2026-02-23 19:17:07,662 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:80] - Detected 1 silence regions
-2026-02-23 19:17:07,664 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:111] - Speaking pattern analyzed: SpeakingPattern(words_per_minute=150, syllables_per_second=3.75, pause_durations=[1.024], inter_word_delays=[1.024], rhythm_entropy=0)
-2026-02-23 19:17:07,742 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 532 frames, range: 103.0-211.6 Hz
-2026-02-23 19:17:07,745 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.0780s | MemDelta: +0.61MB | Result: shape=(532,)
-2026-02-23 19:17:07,748 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:65] - Energy extracted: 157 frames
-2026-02-23 19:17:07,751 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_energy | Duration: 0.0037s | MemDelta: +0.00MB | Result: shape=(157,)
-2026-02-23 19:17:07,838 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 532 frames, range: 103.0-211.6 Hz
-2026-02-23 19:17:07,841 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.0865s | MemDelta: +0.02MB | Result: shape=(532,)
-2026-02-23 19:17:07,879 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:146] - Emotion features extracted: ['pitch_mean', 'pitch_std', 'pitch_range', 'energy_mean', 'energy_std', 'speaking_rate', 'mfccs']
-2026-02-23 19:17:07,881 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_emotion_features | Duration: 0.2145s | MemDelta: +2.20MB | Result: len=7
-2026-02-23 19:17:07,917 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:219] - All features extracted in 5.77s
-2026-02-23 19:17:07,920 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_all_features | Duration: 5.7847s | MemDelta: +44.72MB | Result: len=5
-2026-02-23 19:17:09,666 - personalization_engine.emotion_detector - INFO - [emotion_detector.py:140] - Detected emotion: angry (confidence: 29.21%)
-2026-02-23 19:17:09,667 - qwen_interactive - INFO - [run_qwen_interactive.py:139] - Initial analysis complete. Detected emotion: angry
-2026-02-23 19:31:14,708 - personalization_engine.qwen_adapter - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 21.2% | Memory Usage: 85.5% (6415.9MB used)
-2026-02-23 19:31:14,717 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: QwenInference | Time: O(Tokens * Model_Size) | Space: O(K_V_Cache)
-2026-02-23 19:31:14,723 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:96] - Processing text in 15 chunks
-2026-02-23 19:31:14,724 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:102] - Synthesizing chunk 1/15: I believe that life is a continuous journey of lea...
-2026-02-23 19:35:19,585 - personalization_engine.qwen_adapter - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 75.0% | Memory Usage: 94.4% (7080.7MB used)
-2026-02-23 19:35:19,691 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:102] - Synthesizing chunk 2/15: we encounter opportunities that demand responsibil...
-2026-02-23 19:40:03,428 - personalization_engine.qwen_adapter - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 72.9% | Memory Usage: 85.9% (6444.1MB used)
-2026-02-23 19:40:03,500 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:102] - Synthesizing chunk 3/15: friends, mentors, and colleagues shape our perspec...
-2026-02-23 19:42:53,160 - personalization_engine.qwen_adapter - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 63.5% | Memory Usage: 92.2% (6914.7MB used)
-2026-02-23 19:42:53,223 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:102] - Synthesizing chunk 4/15: There will be moments of failure when carefully de...
-2026-02-23 19:46:26,745 - personalization_engine.qwen_adapter - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 61.7% | Memory Usage: 90.6% (6798.9MB used)
-2026-02-23 19:46:26,793 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:102] - Synthesizing chunk 5/15: Success therefore becomes less about immediate rec...
-2026-02-23 19:50:06,852 - personalization_engine.qwen_adapter - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 62.1% | Memory Usage: 84.7% (6358.1MB used)
-2026-02-23 19:50:06,893 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:102] - Synthesizing chunk 6/15: In an era defined by rapid technological advanceme...
-2026-02-23 19:54:15,394 - personalization_engine.qwen_adapter - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 61.6% | Memory Usage: 82.4% (6184.6MB used)
-2026-02-23 19:54:15,444 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:102] - Synthesizing chunk 7/15: Continuous learning through reading, experimentati...
-2026-02-23 19:58:23,296 - personalization_engine.qwen_adapter - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 69.3% | Memory Usage: 90.6% (6798.8MB used)
-2026-02-23 19:58:23,367 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:102] - Synthesizing chunk 8/15: Equally important is emotional intelligence, which...
-2026-02-23 20:02:16,532 - personalization_engine.qwen_adapter - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 79.4% | Memory Usage: 94.0% (7051.7MB used)
-2026-02-23 20:02:16,596 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:102] - Synthesizing chunk 9/15: and personal spheres where empathy active listenin...
-2026-02-23 20:06:40,400 - personalization_engine.qwen_adapter - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 67.7% | Memory Usage: 92.1% (6913.0MB used)
-2026-02-23 20:06:40,478 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:102] - Synthesizing chunk 10/15: and return with renewed determination focused disc...
-2026-02-23 20:11:30,781 - personalization_engine.qwen_adapter - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 79.5% | Memory Usage: 93.4% (7004.1MB used)
-2026-02-23 20:11:30,873 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:102] - Synthesizing chunk 11/15: and incremental progress cultivates optimism and r...
-2026-02-23 20:16:38,425 - personalization_engine.qwen_adapter - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 79.1% | Memory Usage: 94.1% (7061.3MB used)
-2026-02-23 20:16:38,520 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:102] - Synthesizing chunk 12/15: measurable milestones, and accountable routines th...
-2026-02-23 20:20:51,267 - personalization_engine.qwen_adapter - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 79.9% | Memory Usage: 92.1% (6910.0MB used)
-2026-02-23 20:20:51,344 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:102] - Synthesizing chunk 13/15: Community involvement and service nurture a sense ...
-2026-02-23 20:24:51,199 - personalization_engine.qwen_adapter - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 66.9% | Memory Usage: 91.7% (6879.9MB used)
-2026-02-23 20:24:51,277 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:102] - Synthesizing chunk 14/15: fulfillment emerges not from perfection but from a...
-2026-02-23 20:28:59,817 - personalization_engine.qwen_adapter - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 68.7% | Memory Usage: 93.5% (7015.2MB used)
-2026-02-23 20:28:59,886 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:102] - Synthesizing chunk 15/15: By embracing this comprehensive approach to growth...
-2026-02-23 20:32:56,942 - personalization_engine.qwen_adapter - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 72.0% | Memory Usage: 93.5% (7016.1MB used)
-2026-02-23 20:32:57,738 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:133] - Saved concatenated audio to output\cloned_1771855274.wav
-2026-02-23 20:32:57,753 - personalization_engine.qwen_adapter - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 43.6% | Memory Usage: 93.4% (7008.5MB used)
-2026-02-23 20:32:57,780 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] generate_audio | Duration: 3703.0664s | MemDelta: +2596.11MB | Result: len=28
-2026-02-23 20:32:57,794 - qwen_interactive - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 41.7% | Memory Usage: 92.9% (6970.1MB used)
-2026-02-23 20:32:57,845 - qwen_interactive - INFO - [run_qwen_interactive.py:182] - Metadata written to output\cloned_1771855274.json
-2026-02-23 20:32:58,884 - qwen_interactive - INFO - [run_qwen_interactive.py:197] - Validation report saved to output\cloned_1771855274_report.json
-2026-02-23 22:58:53,752 - qwen_interactive - INFO - [run_qwen_interactive.py:66] - Initialized session for user: current_session_user
+2026-02-24 15:47:31,824 - qwen_interactive - INFO - [run_qwen_interactive.py:66] - Initialized session for user: current_session_user
+2026-02-24 15:47:52,544 - qwen_interactive - INFO - [run_qwen_interactive.py:75] - Reference audio saved to profiles\current_session_user.wav
+2026-02-24 15:47:56,738 - personalization_engine.emotion_detector - INFO - [emotion_detector.py:206] - Emotion model loaded from models\emotion\svm_model.pkl
+2026-02-24 15:47:56,752 - qwen_interactive - INFO - [run_qwen_interactive.py:107] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base
+2026-02-24 15:47:56,759 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:31] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base on cpu
+2026-02-24 15:48:30,275 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:43] - [ModelMetadata] Loaded Qwen/Qwen3-TTS-12Hz-0.6B-Base | Parameters: Unknown | Device: cpu
+2026-02-24 15:48:30,306 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: QwenModel | Time: O(L * D^2) | Space: O(L * D)
+2026-02-24 15:48:30,344 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] load_model | Duration: 33.5833s | MemDelta: +357.54MB | Result: N/A
+2026-02-24 15:48:30,371 - qwen_interactive - INFO - [run_qwen_interactive.py:109] - Model loaded successfully
+2026-02-24 15:48:30,400 - qwen_interactive - INFO - [run_qwen_interactive.py:137] - Starting initial voice analysis
+2026-02-24 15:48:30,494 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: FeatureExtractor | Time: O(N log N) | Space: O(N)
+2026-02-24 15:48:30,502 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:172] - [InputMetadata] Audio Duration: 5.00s | Samples: 80000 | SR: 16000
+2026-02-24 15:48:30,715 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 464 frames, range: 75.8-253.0 Hz
+2026-02-24 15:48:30,719 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.2022s | MemDelta: +1.94MB | Result: shape=(464,)
+2026-02-24 15:48:38,151 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:65] - Energy extracted: 157 frames
+2026-02-24 15:48:38,154 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_energy | Duration: 7.4311s | MemDelta: +37.98MB | Result: shape=(157,)
+2026-02-24 15:48:40,089 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:80] - Detected 3 silence regions
+2026-02-24 15:48:40,104 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:111] - Speaking pattern analyzed: SpeakingPattern(words_per_minute=150, syllables_per_second=3.75, pause_durations=[0.192, 0.768, 0.16], inter_word_delays=[0.192, 0.768, 0.16], rhythm_entropy=0.6365141682948128)
+2026-02-24 15:48:40,225 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 464 frames, range: 75.8-253.0 Hz
+2026-02-24 15:48:40,231 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.1215s | MemDelta: +0.89MB | Result: shape=(464,)
+2026-02-24 15:48:40,236 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:65] - Energy extracted: 157 frames
+2026-02-24 15:48:40,240 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_energy | Duration: 0.0058s | MemDelta: +0.45MB | Result: shape=(157,)
+2026-02-24 15:48:40,367 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 464 frames, range: 75.8-253.0 Hz
+2026-02-24 15:48:40,370 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.1227s | MemDelta: +0.01MB | Result: shape=(464,)
+2026-02-24 15:48:40,419 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:146] - Emotion features extracted: ['pitch_mean', 'pitch_std', 'pitch_range', 'energy_mean', 'energy_std', 'speaking_rate', 'mfccs']
+2026-02-24 15:48:40,423 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_emotion_features | Duration: 0.3127s | MemDelta: +2.91MB | Result: len=7
+2026-02-24 15:48:40,467 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:219] - All features extracted in 9.95s
+2026-02-24 15:48:40,470 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_all_features | Duration: 9.9767s | MemDelta: +45.87MB | Result: len=5
+2026-02-24 15:48:42,828 - personalization_engine.emotion_detector - INFO - [emotion_detector.py:140] - Detected emotion: angry (confidence: 29.08%)
+2026-02-24 15:48:42,830 - qwen_interactive - INFO - [run_qwen_interactive.py:139] - Initial analysis complete. Detected emotion: angry
+2026-03-12 13:06:24,090 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:31] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base on cpu
+2026-03-12 13:06:48,227 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:43] - [ModelMetadata] Loaded Qwen/Qwen3-TTS-12Hz-0.6B-Base | Parameters: Unknown | Device: cpu
+2026-03-12 13:06:48,296 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: QwenModel | Time: O(L * D^2) | Space: O(L * D)
+2026-03-12 13:06:48,322 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] load_model | Duration: 24.2153s | MemDelta: +1742.02MB | Result: N/A
+2026-03-12 13:14:46,865 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:31] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base on cpu
+2026-03-12 13:15:07,258 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:43] - [ModelMetadata] Loaded Qwen/Qwen3-TTS-12Hz-0.6B-Base | Parameters: Unknown | Device: cpu
+2026-03-12 13:15:07,300 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: QwenModel | Time: O(L * D^2) | Space: O(L * D)
+2026-03-12 13:15:07,318 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] load_model | Duration: 20.4443s | MemDelta: +1227.72MB | Result: N/A
+2026-03-12 13:33:03,045 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:31] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base on cpu
+2026-03-12 13:33:23,503 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:43] - [ModelMetadata] Loaded Qwen/Qwen3-TTS-12Hz-0.6B-Base | Parameters: Unknown | Device: cpu
+2026-03-12 13:33:23,538 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: QwenModel | Time: O(L * D^2) | Space: O(L * D)
+2026-03-12 13:33:23,550 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] load_model | Duration: 20.4997s | MemDelta: +948.80MB | Result: N/A
+2026-03-12 13:34:42,444 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:31] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base on cpu
+2026-03-12 13:35:04,033 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:43] - [ModelMetadata] Loaded Qwen/Qwen3-TTS-12Hz-0.6B-Base | Parameters: Unknown | Device: cpu
+2026-03-12 13:35:04,056 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: QwenModel | Time: O(L * D^2) | Space: O(L * D)
+2026-03-12 13:35:04,066 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] load_model | Duration: 21.6189s | MemDelta: +1474.34MB | Result: N/A
+2026-03-12 13:38:12,863 - synthesize_voice - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 32.6% | Memory Usage: 53.3% (3996.3MB used)
+2026-03-12 13:38:12,882 - synthesize_voice - ERROR - [synthesize_voice.py:24] - Profile for user praveen not found at profiles\praveen_profile.json
+2026-03-12 13:39:21,516 - synthesize_voice - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 24.6% | Memory Usage: 57.0% (4274.6MB used)
+2026-03-12 13:39:21,556 - synthesize_voice - INFO - [synthesize_voice.py:35] - Loaded profile for my_voice
+2026-03-12 13:39:21,636 - synthesize_voice - INFO - [synthesize_voice.py:47] - Using TTS Engine: qwen
+2026-03-12 13:39:40,091 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:31] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base on cpu
+2026-03-12 13:40:02,457 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:43] - [ModelMetadata] Loaded Qwen/Qwen3-TTS-12Hz-0.6B-Base | Parameters: Unknown | Device: cpu
+2026-03-12 13:40:02,481 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: QwenModel | Time: O(L * D^2) | Space: O(L * D)
+2026-03-12 13:40:02,487 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] load_model | Duration: 22.3968s | MemDelta: +779.71MB | Result: N/A
+2026-03-12 13:40:02,494 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:159] - Qwen TTS model loaded successfully via adapter.
+2026-03-12 13:40:02,498 - synthesize_voice - INFO - [synthesize_voice.py:59] - Synthesizing: 'This is a test to verify voice consistency. We have modified the Qwen adapter to pre-extract speaker embeddings. This ensures that every sentence in a long text is synthesized with the exact same voice characteristics. Now, even if the text is split into multiple chunks, the output audio should sound like a single speaker without any abrupt changes in tone or identity.'
+2026-03-12 13:40:02,532 - personalization_engine.qwen_adapter - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 48.4% | Memory Usage: 89.5% (6711.3MB used)
+2026-03-12 13:40:02,536 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: QwenInference | Time: O(Tokens * Model_Size) | Space: O(K_V_Cache)
+2026-03-12 13:40:02,544 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:96] - Processing text in 1 chunks
+2026-03-12 13:40:02,547 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:99] - Extracting voice clone prompt from profiles\my_voice.wav
+2026-03-12 13:40:13,425 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:110] - Synthesizing chunk 1/1: This is a test to verify voice consistency. We hav...
+2026-03-12 13:45:54,776 - personalization_engine.qwen_adapter - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 62.4% | Memory Usage: 73.7% (5528.7MB used)
+2026-03-12 13:45:54,920 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:141] - Saved concatenated audio to output/qwen_my_voice_882.wav
+2026-03-12 13:45:54,929 - personalization_engine.qwen_adapter - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 53.8% | Memory Usage: 73.8% (5535.6MB used)
+2026-03-12 13:45:54,941 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] generate_audio | Duration: 352.4090s | MemDelta: +1189.20MB | Result: len=28
+2026-03-12 13:45:54,956 - synthesize_voice - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 37.5% | Memory Usage: 73.8% (5535.2MB used)
+2026-03-12 13:45:54,970 - synthesize_voice - INFO - [synthesize_voice.py:70] - Saved personalized audio to: output\consistency_fixed.wav
+2026-03-12 13:45:54,979 - synthesize_voice - INFO - [synthesize_voice.py:71] - Metadata: {'engine': 'qwen', 'model': 'Qwen/Qwen3-TTS-12Hz-0.6B-Base', 'reference_audio': 'profiles\\my_voice.wav'}
+2026-03-12 13:46:16,397 - synthesize_voice - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 14.5% | Memory Usage: 47.2% (3539.6MB used)
+2026-03-12 13:46:16,411 - synthesize_voice - INFO - [synthesize_voice.py:35] - Loaded profile for my_voice
+2026-03-12 13:46:16,509 - synthesize_voice - INFO - [synthesize_voice.py:47] - Using TTS Engine: qwen
+2026-03-12 13:46:39,797 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:31] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base on cpu
+2026-03-12 13:46:56,748 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:43] - [ModelMetadata] Loaded Qwen/Qwen3-TTS-12Hz-0.6B-Base | Parameters: Unknown | Device: cpu
+2026-03-12 13:46:56,761 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: QwenModel | Time: O(L * D^2) | Space: O(L * D)
+2026-03-12 13:46:56,766 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] load_model | Duration: 16.9702s | MemDelta: +1098.56MB | Result: N/A
+2026-03-12 13:46:56,773 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:159] - Qwen TTS model loaded successfully via adapter.
+2026-03-12 13:46:56,778 - synthesize_voice - INFO - [synthesize_voice.py:59] - Synthesizing: 'I believe that life is a continuous journey of learning, growth, and discovery that challenges every individual to explore their potential, confront their fears, and gradually transform weaknesses into strengths through patience, discipline, and consistent effort over time while embracing change with courage and resilience each day without losing hope, As we move forward, we encounter opportunities that demand responsibility, creativity, and thoughtful decision making in situations that are sometimes uncertain and complex, requiring us to remain adaptable and open minded despite external pressures and unexpected obstacles that test our confidence and strengthen our character profoundly in meaningful lasting ways, Throughout this process, relationships with family, friends, mentors, and colleagues shape our perspectives and influence the values we choose to uphold, teaching us empathy, cooperation, and respect for diverse opinions in both personal and professional environments where collaboration builds trust and shared goals create unity that inspires lasting mutual support, There will be moments of failure when carefully designed plans collapse unexpectedly, leaving us disappointe'
+2026-03-12 13:46:56,836 - personalization_engine.qwen_adapter - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 34.5% | Memory Usage: 90.0% (6754.5MB used)
+2026-03-12 13:46:56,841 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: QwenInference | Time: O(Tokens * Model_Size) | Space: O(K_V_Cache)
+2026-03-12 13:46:56,849 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:96] - Processing text in 4 chunks
+2026-03-12 13:46:56,853 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:99] - Extracting voice clone prompt from profiles\my_voice.wav
+2026-03-12 13:47:04,875 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:110] - Synthesizing chunk 1/4: I believe that life is a continuous journey of lea...
+2026-03-12 14:02:08,649 - qwen_interactive - INFO - [run_qwen_interactive.py:66] - Initialized session for user: current_session_user
+2026-03-12 14:02:08,649 - qwen_interactive - INFO - [run_qwen_interactive.py:66] - Initialized session for user: current_session_user
+2026-03-12 14:02:32,158 - qwen_interactive - INFO - [run_qwen_interactive.py:75] - Reference audio saved to profiles\current_session_user.wav
+2026-03-12 14:02:36,951 - personalization_engine.emotion_detector - INFO - [emotion_detector.py:206] - Emotion model loaded from models\emotion\svm_model.pkl
+2026-03-12 14:02:36,963 - qwen_interactive - INFO - [run_qwen_interactive.py:107] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base
+2026-03-12 14:02:36,967 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:31] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base on cpu
+2026-03-12 14:03:04,983 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:43] - [ModelMetadata] Loaded Qwen/Qwen3-TTS-12Hz-0.6B-Base | Parameters: Unknown | Device: cpu
+2026-03-12 14:03:04,991 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: QwenModel | Time: O(L * D^2) | Space: O(L * D)
+2026-03-12 14:03:04,997 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] load_model | Duration: 28.0289s | MemDelta: +577.09MB | Result: N/A
+2026-03-12 14:03:05,003 - qwen_interactive - INFO - [run_qwen_interactive.py:109] - Model loaded successfully
+2026-03-12 14:03:05,013 - qwen_interactive - INFO - [run_qwen_interactive.py:137] - Starting initial voice analysis
+2026-03-12 14:03:05,065 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: FeatureExtractor | Time: O(N log N) | Space: O(N)
+2026-03-12 14:03:05,070 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:172] - [InputMetadata] Audio Duration: 5.00s | Samples: 80000 | SR: 16000
+2026-03-12 14:03:05,214 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 477 frames, range: 79.2-288.4 Hz
+2026-03-12 14:03:05,218 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.1437s | MemDelta: +1.82MB | Result: shape=(477,)
+2026-03-12 14:03:11,964 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:65] - Energy extracted: 157 frames
+2026-03-12 14:03:11,968 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_energy | Duration: 6.7445s | MemDelta: +40.93MB | Result: shape=(157,)
+2026-03-12 14:03:13,477 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:80] - Detected 3 silence regions
+2026-03-12 14:03:13,491 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:111] - Speaking pattern analyzed: SpeakingPattern(words_per_minute=150, syllables_per_second=3.75, pause_durations=[0.256, 0.096, 0.224], inter_word_delays=[0.256, 0.096, 0.224], rhythm_entropy=1.0986122886681096)
+2026-03-12 14:03:13,634 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 477 frames, range: 79.2-288.4 Hz
+2026-03-12 14:03:13,637 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.1415s | MemDelta: +0.75MB | Result: shape=(477,)
+2026-03-12 14:03:13,646 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:65] - Energy extracted: 157 frames
+2026-03-12 14:03:13,650 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_energy | Duration: 0.0077s | MemDelta: +0.59MB | Result: shape=(157,)
+2026-03-12 14:03:13,773 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 477 frames, range: 79.2-288.4 Hz
+2026-03-12 14:03:13,776 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.1210s | MemDelta: +0.02MB | Result: shape=(477,)
+2026-03-12 14:03:13,835 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:146] - Emotion features extracted: ['pitch_mean', 'pitch_std', 'pitch_range', 'energy_mean', 'energy_std', 'speaking_rate', 'mfccs']
+2026-03-12 14:03:13,838 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_emotion_features | Duration: 0.3422s | MemDelta: +2.56MB | Result: len=7
+2026-03-12 14:03:13,883 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:219] - All features extracted in 8.81s
+2026-03-12 14:03:13,887 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_all_features | Duration: 8.8201s | MemDelta: +49.07MB | Result: len=5
+2026-03-12 14:03:16,447 - personalization_engine.emotion_detector - INFO - [emotion_detector.py:140] - Detected emotion: angry (confidence: 29.06%)
+2026-03-12 14:03:16,451 - qwen_interactive - INFO - [run_qwen_interactive.py:139] - Initial analysis complete. Detected emotion: angry
+2026-03-12 14:06:53,612 - personalization_engine.qwen_adapter - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 41.7% | Memory Usage: 86.1% (6460.8MB used)
+2026-03-12 14:06:53,615 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: QwenInference | Time: O(Tokens * Model_Size) | Space: O(K_V_Cache)
+2026-03-12 14:06:53,620 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:96] - Processing text in 2 chunks
+2026-03-12 14:06:53,624 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:99] - Extracting voice clone prompt from profiles\current_session_user.wav
+2026-03-12 14:06:56,305 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:110] - Synthesizing chunk 1/2: Curiosity drives progress, and every day offers a ...
+2026-03-12 14:10:35,140 - personalization_engine.qwen_adapter - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 71.4% | Memory Usage: 90.5% (6792.1MB used)
+2026-03-12 14:10:35,206 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:110] - Synthesizing chunk 2/2: Over time these steady habits shape character, str...
+2026-03-12 14:14:26,017 - personalization_engine.qwen_adapter - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 67.0% | Memory Usage: 91.7% (6879.8MB used)
+2026-03-12 14:14:26,137 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:141] - Saved concatenated audio to output\cloned_1773304613.wav
+2026-03-12 14:14:26,143 - personalization_engine.qwen_adapter - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 62.7% | Memory Usage: 91.9% (6894.3MB used)
+2026-03-12 14:14:26,155 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] generate_audio | Duration: 452.5401s | MemDelta: +2285.08MB | Result: len=28
+2026-03-12 14:14:26,163 - qwen_interactive - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 50.0% | Memory Usage: 91.9% (6892.3MB used)
+2026-03-12 14:14:26,188 - qwen_interactive - INFO - [run_qwen_interactive.py:182] - Metadata written to output\cloned_1773304613.json
+2026-03-12 14:14:26,366 - qwen_interactive - INFO - [run_qwen_interactive.py:197] - Validation report saved to output\cloned_1773304613_report.json
+2026-03-12 14:43:34,231 - qwen_interactive - INFO - [run_qwen_interactive.py:66] - Initialized session for user: current_session_user
+2026-03-12 14:47:41,035 - qwen_interactive - INFO - [run_qwen_interactive.py:66] - Initialized session for user: current_session_user
+2026-03-12 14:50:21,475 - qwen_interactive - INFO - [run_qwen_interactive.py:75] - Reference audio saved to profiles\current_session_user.wav
+2026-03-12 14:50:23,105 - personalization_engine.emotion_detector - INFO - [emotion_detector.py:206] - Emotion model loaded from models\emotion\svm_model.pkl
+2026-03-12 14:50:23,114 - qwen_interactive - INFO - [run_qwen_interactive.py:107] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base
+2026-03-12 14:50:23,117 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:31] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base on cpu
+2026-03-12 14:50:48,644 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:43] - [ModelMetadata] Loaded Qwen/Qwen3-TTS-12Hz-0.6B-Base | Parameters: Unknown | Device: cpu
+2026-03-12 14:50:48,653 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: QwenModel | Time: O(L * D^2) | Space: O(L * D)
+2026-03-12 14:50:48,658 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] load_model | Duration: 25.5387s | MemDelta: +997.23MB | Result: N/A
+2026-03-12 14:50:48,663 - qwen_interactive - INFO - [run_qwen_interactive.py:109] - Model loaded successfully
+2026-03-12 14:50:48,669 - qwen_interactive - INFO - [run_qwen_interactive.py:137] - Starting initial voice analysis
+2026-03-12 14:50:48,720 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: FeatureExtractor | Time: O(N log N) | Space: O(N)
+2026-03-12 14:50:48,723 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:172] - [InputMetadata] Audio Duration: 5.00s | Samples: 80000 | SR: 16000
+2026-03-12 14:50:48,866 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 437 frames, range: 78.1-267.3 Hz
+2026-03-12 14:50:48,869 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.1414s | MemDelta: +1.52MB | Result: shape=(437,)
+2026-03-12 14:50:53,769 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:65] - Energy extracted: 157 frames
+2026-03-12 14:50:53,773 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_energy | Duration: 4.8989s | MemDelta: +36.62MB | Result: shape=(157,)
+2026-03-12 14:50:54,017 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:80] - Detected 5 silence regions
+2026-03-12 14:50:54,028 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:111] - Speaking pattern analyzed: SpeakingPattern(words_per_minute=150, syllables_per_second=3.75, pause_durations=[0.416, 0.064, 0.096, 0.224, 0.608], inter_word_delays=[0.416, 0.064, 0.096, 0.224, 0.608], rhythm_entropy=1.3321790402101223)
+2026-03-12 14:50:54,152 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 437 frames, range: 78.1-267.3 Hz
+2026-03-12 14:50:54,155 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.1234s | MemDelta: +1.29MB | Result: shape=(437,)
+2026-03-12 14:50:54,161 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:65] - Energy extracted: 157 frames
+2026-03-12 14:50:54,164 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_energy | Duration: 0.0055s | MemDelta: +0.00MB | Result: shape=(157,)
+2026-03-12 14:50:54,283 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 437 frames, range: 78.1-267.3 Hz
+2026-03-12 14:50:54,286 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.1181s | MemDelta: +0.02MB | Result: shape=(437,)
+2026-03-12 14:50:54,329 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:146] - Emotion features extracted: ['pitch_mean', 'pitch_std', 'pitch_range', 'energy_mean', 'energy_std', 'speaking_rate', 'mfccs']
+2026-03-12 14:50:54,332 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_emotion_features | Duration: 0.2998s | MemDelta: +3.02MB | Result: len=7
+2026-03-12 14:50:54,373 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:219] - All features extracted in 5.65s
+2026-03-12 14:50:54,376 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_all_features | Duration: 5.6565s | MemDelta: +44.67MB | Result: len=5
+2026-03-12 14:50:56,737 - personalization_engine.emotion_detector - INFO - [emotion_detector.py:140] - Detected emotion: angry (confidence: 29.04%)
+2026-03-12 14:50:56,740 - qwen_interactive - INFO - [run_qwen_interactive.py:139] - Initial analysis complete. Detected emotion: angry
+2026-03-12 14:51:44,477 - personalization_engine.qwen_adapter - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 14.1% | Memory Usage: 88.5% (6636.2MB used)
+2026-03-12 14:51:44,481 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: QwenInference | Time: O(Batch * Tokens * Model_Size) | Space: O(Batch * K_V_Cache)
+2026-03-12 14:51:44,485 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:96] - Processing text in 1 chunks as a single batch
+2026-03-12 14:51:44,488 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:99] - Extracting voice clone prompt from profiles\current_session_user.wav
+2026-03-12 14:57:54,910 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:133] - Saved concatenated audio to output\cloned_1773307304.wav
+2026-03-12 14:57:54,991 - personalization_engine.qwen_adapter - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 65.2% | Memory Usage: 70.1% (5259.3MB used)
+2026-03-12 14:57:55,004 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] generate_audio | Duration: 370.5252s | MemDelta: +635.64MB | Result: len=28
+2026-03-12 14:57:55,011 - qwen_interactive - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 64.7% | Memory Usage: 70.1% (5257.9MB used)
+2026-03-12 14:57:55,035 - qwen_interactive - INFO - [run_qwen_interactive.py:182] - Metadata written to output\cloned_1773307304.json
+2026-03-12 14:57:55,187 - qwen_interactive - INFO - [run_qwen_interactive.py:197] - Validation report saved to output\cloned_1773307304_report.json
+2026-03-12 15:11:45,643 - qwen_interactive - INFO - [run_qwen_interactive.py:66] - Initialized session for user: current_session_user
+2026-03-12 15:12:06,856 - qwen_interactive - INFO - [run_qwen_interactive.py:66] - Initialized session for user: current_session_user
+2026-03-12 15:12:17,886 - qwen_interactive - INFO - [run_qwen_interactive.py:75] - Reference audio saved to profiles\current_session_user.wav
+2026-03-12 15:12:19,467 - personalization_engine.emotion_detector - INFO - [emotion_detector.py:206] - Emotion model loaded from models\emotion\svm_model.pkl
+2026-03-12 15:12:19,477 - qwen_interactive - INFO - [run_qwen_interactive.py:107] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base
+2026-03-12 15:12:19,480 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:32] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base on cpu
+2026-03-12 15:12:46,613 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:44] - [ModelMetadata] Loaded Qwen/Qwen3-TTS-12Hz-0.6B-Base | Parameters: Unknown | Device: cpu
+2026-03-12 15:12:46,633 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: QwenModel | Time: O(L * D^2) | Space: O(L * D)
+2026-03-12 15:12:46,637 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] load_model | Duration: 27.1553s | MemDelta: +853.13MB | Result: N/A
+2026-03-12 15:12:46,644 - qwen_interactive - INFO - [run_qwen_interactive.py:109] - Model loaded successfully
+2026-03-12 15:12:46,652 - qwen_interactive - INFO - [run_qwen_interactive.py:137] - Starting initial voice analysis
+2026-03-12 15:12:46,715 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: FeatureExtractor | Time: O(N log N) | Space: O(N)
+2026-03-12 15:12:46,719 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:172] - [InputMetadata] Audio Duration: 5.00s | Samples: 80000 | SR: 16000
+2026-03-12 15:12:46,860 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 468 frames, range: 79.8-206.6 Hz
+2026-03-12 15:12:46,863 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.1401s | MemDelta: +1.51MB | Result: shape=(468,)
+2026-03-12 15:12:51,478 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:65] - Energy extracted: 157 frames
+2026-03-12 15:12:51,481 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_energy | Duration: 4.6134s | MemDelta: +38.84MB | Result: shape=(157,)
+2026-03-12 15:12:51,749 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:80] - Detected 3 silence regions
+2026-03-12 15:12:51,760 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:111] - Speaking pattern analyzed: SpeakingPattern(words_per_minute=150, syllables_per_second=3.75, pause_durations=[0.896, 0.192, 0.128], inter_word_delays=[0.896, 0.192, 0.128], rhythm_entropy=0.6365141682948128)
+2026-03-12 15:12:51,882 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 468 frames, range: 79.8-206.6 Hz
+2026-03-12 15:12:51,885 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.1194s | MemDelta: +0.66MB | Result: shape=(468,)
+2026-03-12 15:12:51,891 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:65] - Energy extracted: 157 frames
+2026-03-12 15:12:51,894 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_energy | Duration: 0.0062s | MemDelta: +0.60MB | Result: shape=(157,)
+2026-03-12 15:12:52,010 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 468 frames, range: 79.8-206.6 Hz
+2026-03-12 15:12:52,013 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.1146s | MemDelta: +0.01MB | Result: shape=(468,)
+2026-03-12 15:12:52,055 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:146] - Emotion features extracted: ['pitch_mean', 'pitch_std', 'pitch_range', 'energy_mean', 'energy_std', 'speaking_rate', 'mfccs']
+2026-03-12 15:12:52,060 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_emotion_features | Duration: 0.2947s | MemDelta: +2.43MB | Result: len=7
+2026-03-12 15:12:52,097 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:219] - All features extracted in 5.37s
+2026-03-12 15:12:52,101 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_all_features | Duration: 5.3856s | MemDelta: +46.92MB | Result: len=5
+2026-03-12 15:12:54,179 - personalization_engine.emotion_detector - INFO - [emotion_detector.py:140] - Detected emotion: angry (confidence: 29.07%)
+2026-03-12 15:12:54,183 - qwen_interactive - INFO - [run_qwen_interactive.py:139] - Initial analysis complete. Detected emotion: angry
+2026-03-12 15:13:34,550 - personalization_engine.qwen_adapter - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 33.3% | Memory Usage: 84.0% (6303.1MB used)
+2026-03-12 15:13:34,553 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: QwenInference | Time: O(Batch * Tokens * Model_Size) | Space: O(Batch * K_V_Cache)
+2026-03-12 15:13:34,559 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:97] - Processing text in 1 chunks as a single batch
+2026-03-12 15:13:34,562 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:100] - Extracting voice clone prompt from profiles\current_session_user.wav
+2026-03-12 15:20:32,920 - personalization_engine.qwen_adapter - ERROR - [qwen_adapter.py:146] - Batch synthesis failed: name 'kwargs' is not defined
+2026-03-12 15:20:32,995 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:148] - Retrying with serial processing...
+2026-03-12 15:20:32,998 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:153] - Fallback synthesizing chunk 1/1
+2026-03-12 15:26:49,688 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] generate_audio | Duration: 795.1260s | MemDelta: +2584.60MB | Result: len=28
+2026-03-12 15:26:49,740 - qwen_interactive - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 64.5% | Memory Usage: 90.2% (6767.8MB used)
+2026-03-12 15:26:49,763 - qwen_interactive - INFO - [run_qwen_interactive.py:182] - Metadata written to output\cloned_1773308614.json
+2026-03-12 15:26:49,905 - qwen_interactive - INFO - [run_qwen_interactive.py:197] - Validation report saved to output\cloned_1773308614_report.json
+2026-03-12 16:57:39,596 - qwen_interactive - INFO - [run_qwen_interactive.py:66] - Initialized session for user: current_session_user
+2026-03-12 16:59:41,992 - qwen_interactive - INFO - [run_qwen_interactive.py:66] - Initialized session for user: current_session_user
+2026-03-12 17:00:06,104 - qwen_interactive - INFO - [run_qwen_interactive.py:89] - Reference audio recorded and saved to profiles\current_session_user.wav
+2026-03-12 17:00:07,857 - personalization_engine.emotion_detector - INFO - [emotion_detector.py:206] - Emotion model loaded from models\emotion\svm_model.pkl
+2026-03-12 17:00:07,866 - qwen_interactive - INFO - [run_qwen_interactive.py:146] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base
+2026-03-12 17:00:07,870 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:32] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base on cpu
+2026-03-12 17:02:17,141 - qwen_interactive - INFO - [run_qwen_interactive.py:66] - Initialized session for user: current_session_user
+2026-03-12 17:07:43,146 - qwen_interactive - INFO - [run_qwen_interactive.py:66] - Initialized session for user: current_session_user
+2026-03-12 17:07:54,269 - personalization_engine.emotion_detector - INFO - [emotion_detector.py:206] - Emotion model loaded from models\emotion\svm_model.pkl
+2026-03-12 17:07:54,283 - qwen_interactive - INFO - [run_qwen_interactive.py:147] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base
+2026-03-12 17:07:54,289 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:32] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base on cpu
+2026-03-12 17:08:21,626 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:44] - [ModelMetadata] Loaded Qwen/Qwen3-TTS-12Hz-0.6B-Base | Parameters: Unknown | Device: cpu
+2026-03-12 17:08:21,637 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: QwenModel | Time: O(L * D^2) | Space: O(L * D)
+2026-03-12 17:08:21,645 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] load_model | Duration: 27.3559s | MemDelta: +840.79MB | Result: N/A
+2026-03-12 17:08:21,654 - qwen_interactive - INFO - [run_qwen_interactive.py:149] - Model loaded successfully
+2026-03-12 17:08:21,661 - qwen_interactive - INFO - [run_qwen_interactive.py:177] - Starting initial voice analysis
+2026-03-12 17:08:21,683 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: FeatureExtractor | Time: O(N log N) | Space: O(N)
+2026-03-12 17:08:21,688 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:172] - [InputMetadata] Audio Duration: 5.00s | Samples: 80000 | SR: 16000
+2026-03-12 17:08:21,807 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 396 frames, range: 83.0-177.6 Hz
+2026-03-12 17:08:21,811 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.1172s | MemDelta: +1.83MB | Result: shape=(396,)
+2026-03-12 17:08:27,342 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:65] - Energy extracted: 157 frames
+2026-03-12 17:08:27,346 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_energy | Duration: 5.5288s | MemDelta: +39.47MB | Result: shape=(157,)
+2026-03-12 17:08:27,664 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:80] - Detected 1 silence regions
+2026-03-12 17:08:27,671 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:111] - Speaking pattern analyzed: SpeakingPattern(words_per_minute=150, syllables_per_second=3.75, pause_durations=[1.856], inter_word_delays=[1.856], rhythm_entropy=0)
+2026-03-12 17:08:27,799 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 396 frames, range: 83.0-177.6 Hz
+2026-03-12 17:08:27,802 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.1175s | MemDelta: +1.02MB | Result: shape=(396,)
+2026-03-12 17:08:27,810 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:65] - Energy extracted: 157 frames
+2026-03-12 17:08:27,815 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_energy | Duration: 0.0084s | MemDelta: +0.01MB | Result: shape=(157,)
+2026-03-12 17:08:27,932 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 396 frames, range: 83.0-177.6 Hz
+2026-03-12 17:08:27,936 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.1110s | MemDelta: +0.03MB | Result: shape=(396,)
+2026-03-12 17:08:27,981 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:146] - Emotion features extracted: ['pitch_mean', 'pitch_std', 'pitch_range', 'energy_mean', 'energy_std', 'speaking_rate', 'mfccs']
+2026-03-12 17:08:27,989 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_emotion_features | Duration: 0.3039s | MemDelta: +2.59MB | Result: len=7
+2026-03-12 17:08:28,025 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:219] - All features extracted in 6.33s
+2026-03-12 17:08:28,029 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_all_features | Duration: 6.3464s | MemDelta: +46.40MB | Result: len=5
+2026-03-12 17:08:30,211 - personalization_engine.emotion_detector - INFO - [emotion_detector.py:140] - Detected emotion: angry (confidence: 29.14%)
+2026-03-12 17:08:30,217 - qwen_interactive - INFO - [run_qwen_interactive.py:179] - Initial analysis complete. Detected emotion: angry
+2026-03-12 17:08:56,631 - personalization_engine.qwen_adapter - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 38.8% | Memory Usage: 83.8% (6284.0MB used)
+2026-03-12 17:08:56,638 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: QwenInference | Time: O(Batch * Tokens * Model_Size) | Space: O(Batch * K_V_Cache)
+2026-03-12 17:08:56,650 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:97] - Processing text in 1 chunks as a single batch
+2026-03-12 17:08:56,674 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:100] - Extracting voice clone prompt from profiles\current_session_user.wav
+2026-03-12 17:15:27,234 - personalization_engine.qwen_adapter - ERROR - [qwen_adapter.py:146] - Batch synthesis failed: name 'kwargs' is not defined
+2026-03-12 17:15:27,335 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:148] - Retrying with serial processing...
+2026-03-12 17:15:27,343 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:153] - Fallback synthesizing chunk 1/1
+2026-03-12 17:21:25,546 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] generate_audio | Duration: 748.9050s | MemDelta: +885.58MB | Result: len=28
+2026-03-12 17:21:25,607 - qwen_interactive - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 72.5% | Memory Usage: 83.0% (6224.1MB used)
+2026-03-12 17:21:25,640 - qwen_interactive - INFO - [run_qwen_interactive.py:222] - Metadata written to output\cloned_1773315536.json
+2026-03-12 17:21:25,815 - qwen_interactive - INFO - [run_qwen_interactive.py:237] - Validation report saved to output\cloned_1773315536_report.json
+2026-03-12 22:41:33,691 - qwen_interactive - INFO - [run_qwen_interactive.py:66] - Initialized session for user: current_session_user
+2026-03-12 22:43:15,300 - personalization_engine.emotion_detector - INFO - [emotion_detector.py:206] - Emotion model loaded from models\emotion\svm_model.pkl
+2026-03-12 22:43:15,307 - qwen_interactive - INFO - [run_qwen_interactive.py:147] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base
+2026-03-12 22:43:15,310 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:32] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base on cpu
+2026-03-12 22:43:42,869 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:44] - [ModelMetadata] Loaded Qwen/Qwen3-TTS-12Hz-0.6B-Base | Parameters: Unknown | Device: cpu
+2026-03-12 22:43:42,876 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: QwenModel | Time: O(L * D^2) | Space: O(L * D)
+2026-03-12 22:43:42,880 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] load_model | Duration: 27.5692s | MemDelta: +1222.55MB | Result: N/A
+2026-03-12 22:43:42,884 - qwen_interactive - INFO - [run_qwen_interactive.py:149] - Model loaded successfully
+2026-03-12 22:43:42,889 - qwen_interactive - INFO - [run_qwen_interactive.py:177] - Starting initial voice analysis
+2026-03-12 22:43:42,917 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: FeatureExtractor | Time: O(N log N) | Space: O(N)
+2026-03-12 22:43:42,919 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:172] - [InputMetadata] Audio Duration: 12.73s | Samples: 203677 | SR: 16000
+2026-03-12 22:43:43,141 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 2242 frames, range: 65.4-244.7 Hz
+2026-03-12 22:43:43,142 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.2207s | MemDelta: +2.04MB | Result: shape=(2242,)
+2026-03-12 22:43:47,964 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:65] - Energy extracted: 398 frames
+2026-03-12 22:43:47,966 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_energy | Duration: 4.8228s | MemDelta: +39.98MB | Result: shape=(398,)
+2026-03-12 22:43:48,642 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:80] - Detected 5 silence regions
+2026-03-12 22:43:48,648 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:111] - Speaking pattern analyzed: SpeakingPattern(words_per_minute=150, syllables_per_second=3.75, pause_durations=[0.576, 0.128, 0.48, 0.064, 0.096], inter_word_delays=[0.576, 0.128, 0.48, 0.064, 0.096], rhythm_entropy=1.3321790402101223)
+2026-03-12 22:43:48,859 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 2242 frames, range: 65.4-244.7 Hz
+2026-03-12 22:43:48,861 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.2107s | MemDelta: +1.21MB | Result: shape=(2242,)
+2026-03-12 22:43:48,866 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:65] - Energy extracted: 398 frames
+2026-03-12 22:43:48,868 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_energy | Duration: 0.0063s | MemDelta: +0.00MB | Result: shape=(398,)
+2026-03-12 22:43:49,135 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 2242 frames, range: 65.4-244.7 Hz
+2026-03-12 22:43:49,137 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.2652s | MemDelta: +0.82MB | Result: shape=(2242,)
+2026-03-12 22:43:49,180 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:146] - Emotion features extracted: ['pitch_mean', 'pitch_std', 'pitch_range', 'energy_mean', 'energy_std', 'speaking_rate', 'mfccs']
+2026-03-12 22:43:49,182 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_emotion_features | Duration: 0.5319s | MemDelta: +3.29MB | Result: len=7
+2026-03-12 22:43:49,229 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:219] - All features extracted in 6.31s
+2026-03-12 22:43:49,230 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_all_features | Duration: 6.3132s | MemDelta: +48.59MB | Result: len=5
+2026-03-12 22:43:52,893 - personalization_engine.emotion_detector - INFO - [emotion_detector.py:140] - Detected emotion: happy (confidence: 25.98%)
+2026-03-12 22:43:52,895 - qwen_interactive - INFO - [run_qwen_interactive.py:179] - Initial analysis complete. Detected emotion: happy
+2026-03-12 22:44:18,012 - personalization_engine.qwen_adapter - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 36.0% | Memory Usage: 83.8% (6284.5MB used)
+2026-03-12 22:44:18,015 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: QwenInference | Time: O(Batch * Tokens * Model_Size) | Space: O(Batch * K_V_Cache)
+2026-03-12 22:44:18,018 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:97] - Processing text in 1 chunks as a single batch
+2026-03-12 22:44:18,019 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:100] - Extracting voice clone prompt from profiles\current_session_user.wav
+2026-03-12 22:49:47,948 - personalization_engine.qwen_adapter - ERROR - [qwen_adapter.py:146] - Batch synthesis failed: name 'kwargs' is not defined
+2026-03-12 22:49:48,031 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:148] - Retrying with serial processing...
+2026-03-12 22:49:48,035 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:153] - Fallback synthesizing chunk 1/1
+2026-03-12 22:54:46,535 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] generate_audio | Duration: 628.5102s | MemDelta: +2076.15MB | Result: len=28
+2026-03-12 22:54:46,609 - qwen_interactive - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 65.7% | Memory Usage: 92.5% (6936.9MB used)
+2026-03-12 22:54:46,633 - qwen_interactive - INFO - [run_qwen_interactive.py:222] - Metadata written to output\cloned_1773335658.json
+2026-03-12 22:54:46,763 - qwen_interactive - INFO - [run_qwen_interactive.py:237] - Validation report saved to output\cloned_1773335658_report.json
+2026-03-12 22:56:34,721 - qwen_interactive - INFO - [run_qwen_interactive.py:66] - Initialized session for user: current_session_user
+2026-03-12 22:59:47,715 - qwen_interactive - INFO - [run_qwen_interactive.py:89] - Reference audio recorded and saved to profiles\current_session_user.wav
+2026-03-12 22:59:48,705 - personalization_engine.emotion_detector - INFO - [emotion_detector.py:206] - Emotion model loaded from models\emotion\svm_model.pkl
+2026-03-12 22:59:48,711 - qwen_interactive - INFO - [run_qwen_interactive.py:147] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base
+2026-03-12 22:59:48,712 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:32] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base on cpu
+2026-03-12 23:00:10,993 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:44] - [ModelMetadata] Loaded Qwen/Qwen3-TTS-12Hz-0.6B-Base | Parameters: Unknown | Device: cpu
+2026-03-12 23:00:11,000 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: QwenModel | Time: O(L * D^2) | Space: O(L * D)
+2026-03-12 23:00:11,002 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] load_model | Duration: 22.2912s | MemDelta: +1025.28MB | Result: N/A
+2026-03-12 23:00:11,009 - qwen_interactive - INFO - [run_qwen_interactive.py:149] - Model loaded successfully
+2026-03-12 23:00:11,017 - qwen_interactive - INFO - [run_qwen_interactive.py:177] - Starting initial voice analysis
+2026-03-12 23:00:11,063 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: FeatureExtractor | Time: O(N log N) | Space: O(N)
+2026-03-12 23:00:11,065 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:172] - [InputMetadata] Audio Duration: 5.00s | Samples: 80000 | SR: 16000
+2026-03-12 23:00:11,170 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 637 frames, range: 83.4-195.6 Hz
+2026-03-12 23:00:11,172 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.1042s | MemDelta: +2.48MB | Result: shape=(637,)
+2026-03-12 23:00:14,176 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:65] - Energy extracted: 157 frames
+2026-03-12 23:00:14,177 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_energy | Duration: 3.0031s | MemDelta: +38.73MB | Result: shape=(157,)
+2026-03-12 23:00:14,335 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:80] - Detected 2 silence regions
+2026-03-12 23:00:14,343 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:111] - Speaking pattern analyzed: SpeakingPattern(words_per_minute=150, syllables_per_second=3.75, pause_durations=[0.064, 0.064], inter_word_delays=[0.064, 0.064], rhythm_entropy=0.0)
+2026-03-12 23:00:14,426 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 637 frames, range: 83.4-195.6 Hz
+2026-03-12 23:00:14,428 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.0833s | MemDelta: +0.66MB | Result: shape=(637,)
+2026-03-12 23:00:14,431 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:65] - Energy extracted: 157 frames
+2026-03-12 23:00:14,433 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_energy | Duration: 0.0043s | MemDelta: +0.61MB | Result: shape=(157,)
+2026-03-12 23:00:14,510 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 637 frames, range: 83.4-195.6 Hz
+2026-03-12 23:00:14,512 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.0772s | MemDelta: +0.14MB | Result: shape=(637,)
+2026-03-12 23:00:14,540 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:146] - Emotion features extracted: ['pitch_mean', 'pitch_std', 'pitch_range', 'energy_mean', 'energy_std', 'speaking_rate', 'mfccs']
+2026-03-12 23:00:14,542 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_emotion_features | Duration: 0.1975s | MemDelta: +2.65MB | Result: len=7
+2026-03-12 23:00:14,568 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:219] - All features extracted in 3.50s
+2026-03-12 23:00:14,571 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_all_features | Duration: 3.5062s | MemDelta: +47.99MB | Result: len=5
+2026-03-12 23:00:16,020 - personalization_engine.emotion_detector - INFO - [emotion_detector.py:140] - Detected emotion: angry (confidence: 29.31%)
+2026-03-12 23:00:16,022 - qwen_interactive - INFO - [run_qwen_interactive.py:179] - Initial analysis complete. Detected emotion: angry
+2026-03-12 23:02:03,196 - personalization_engine.qwen_adapter - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 11.4% | Memory Usage: 74.9% (5619.6MB used)
+2026-03-12 23:02:03,198 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: QwenInference | Time: O(Batch * Tokens * Model_Size) | Space: O(Batch * K_V_Cache)
+2026-03-12 23:02:03,200 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:97] - Processing text in 1 chunks as a single batch
+2026-03-12 23:02:03,203 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:100] - Extracting voice clone prompt from profiles\current_session_user.wav
+2026-03-12 23:06:20,795 - personalization_engine.qwen_adapter - ERROR - [qwen_adapter.py:146] - Batch synthesis failed: name 'kwargs' is not defined
+2026-03-12 23:06:20,866 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:148] - Retrying with serial processing...
+2026-03-12 23:06:20,870 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:153] - Fallback synthesizing chunk 1/1
+2026-03-13 08:55:02,843 - qwen_interactive - INFO - [run_qwen_interactive.py:66] - Initialized session for user: current_session_user
+2026-03-13 08:55:42,622 - qwen_interactive - INFO - [run_qwen_interactive.py:89] - Reference audio recorded and saved to profiles\current_session_user.wav
+2026-03-13 08:55:46,179 - personalization_engine.emotion_detector - INFO - [emotion_detector.py:206] - Emotion model loaded from models\emotion\svm_model.pkl
+2026-03-13 08:55:46,188 - qwen_interactive - INFO - [run_qwen_interactive.py:147] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base
+2026-03-13 08:55:46,191 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:32] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base on cpu
+2026-03-13 08:56:23,003 - qwen_interactive - INFO - [run_qwen_interactive.py:66] - Initialized session for user: current_session_user
+2026-03-13 08:56:36,755 - qwen_interactive - INFO - [run_qwen_interactive.py:89] - Reference audio recorded and saved to profiles\current_session_user.wav
+2026-03-13 08:56:37,990 - personalization_engine.emotion_detector - INFO - [emotion_detector.py:206] - Emotion model loaded from models\emotion\svm_model.pkl
+2026-03-13 08:56:37,998 - qwen_interactive - INFO - [run_qwen_interactive.py:147] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base
+2026-03-13 08:56:37,999 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:32] - Loading Qwen TTS model: Qwen/Qwen3-TTS-12Hz-0.6B-Base on cpu
+2026-03-13 08:56:59,283 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:44] - [ModelMetadata] Loaded Qwen/Qwen3-TTS-12Hz-0.6B-Base | Parameters: Unknown | Device: cpu
+2026-03-13 08:56:59,288 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: QwenModel | Time: O(L * D^2) | Space: O(L * D)
+2026-03-13 08:56:59,291 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] load_model | Duration: 21.2903s | MemDelta: +618.73MB | Result: N/A
+2026-03-13 08:56:59,294 - qwen_interactive - INFO - [run_qwen_interactive.py:149] - Model loaded successfully
+2026-03-13 08:56:59,298 - qwen_interactive - INFO - [run_qwen_interactive.py:177] - Starting initial voice analysis
+2026-03-13 08:56:59,327 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: FeatureExtractor | Time: O(N log N) | Space: O(N)
+2026-03-13 08:56:59,329 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:172] - [InputMetadata] Audio Duration: 5.00s | Samples: 80000 | SR: 16000
+2026-03-13 08:56:59,418 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 411 frames, range: 84.5-199.7 Hz
+2026-03-13 08:56:59,419 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.0848s | MemDelta: +2.34MB | Result: shape=(411,)
+2026-03-13 08:57:03,487 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:65] - Energy extracted: 157 frames
+2026-03-13 08:57:03,489 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_energy | Duration: 4.0680s | MemDelta: +39.93MB | Result: shape=(157,)
+2026-03-13 08:57:04,343 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:80] - Detected 0 silence regions
+2026-03-13 08:57:04,345 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:111] - Speaking pattern analyzed: SpeakingPattern(words_per_minute=150, syllables_per_second=3.75, pause_durations=[], inter_word_delays=[0.3], rhythm_entropy=0)
+2026-03-13 08:57:04,413 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 411 frames, range: 84.5-199.7 Hz
+2026-03-13 08:57:04,416 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.0677s | MemDelta: +1.14MB | Result: shape=(411,)
+2026-03-13 08:57:04,419 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:65] - Energy extracted: 157 frames
+2026-03-13 08:57:04,421 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_energy | Duration: 0.0030s | MemDelta: +0.00MB | Result: shape=(157,)
+2026-03-13 08:57:04,492 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:49] - F0 extracted: 411 frames, range: 84.5-199.7 Hz
+2026-03-13 08:57:04,494 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_f0 | Duration: 0.0697s | MemDelta: +0.02MB | Result: shape=(411,)
+2026-03-13 08:57:04,520 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:146] - Emotion features extracted: ['pitch_mean', 'pitch_std', 'pitch_range', 'energy_mean', 'energy_std', 'speaking_rate', 'mfccs']
+2026-03-13 08:57:04,521 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_emotion_features | Duration: 0.1729s | MemDelta: +2.38MB | Result: len=7
+2026-03-13 08:57:04,549 - personalization_engine.feature_extractor - INFO - [feature_extractor.py:219] - All features extracted in 5.21s
+2026-03-13 08:57:04,551 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] extract_all_features | Duration: 5.2241s | MemDelta: +48.41MB | Result: len=5
+2026-03-13 08:57:06,026 - personalization_engine.emotion_detector - INFO - [emotion_detector.py:140] - Detected emotion: angry (confidence: 29.06%)
+2026-03-13 08:57:06,028 - qwen_interactive - INFO - [run_qwen_interactive.py:179] - Initial analysis complete. Detected emotion: angry
+2026-03-13 08:57:09,137 - personalization_engine.qwen_adapter - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 48.2% | Memory Usage: 78.8% (5915.6MB used)
+2026-03-13 08:57:09,138 - personalization_engine - INFO - [logger.py:30] - [Complexity] Component: QwenInference | Time: O(Batch * Tokens * Model_Size) | Space: O(Batch * K_V_Cache)
+2026-03-13 08:57:09,140 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:97] - Processing text in 1 chunks as a single batch
+2026-03-13 08:57:09,143 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:100] - Extracting voice clone prompt from profiles\current_session_user.wav
+2026-03-13 09:02:26,955 - personalization_engine.qwen_adapter - ERROR - [qwen_adapter.py:146] - Batch synthesis failed: name 'kwargs' is not defined
+2026-03-13 09:02:27,004 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:148] - Retrying with serial processing...
+2026-03-13 09:02:27,008 - personalization_engine.qwen_adapter - INFO - [qwen_adapter.py:153] - Fallback synthesizing chunk 1/1
+2026-03-13 09:07:42,599 - personalization_engine - INFO - [logger.py:70] - [ExecutionComplete] generate_audio | Duration: 633.4512s | MemDelta: +294.13MB | Result: len=28
+2026-03-13 09:07:42,639 - qwen_interactive - INFO - [logger.py:23] - [Metrics] [MemoryFootprint] CPU Usage: 67.6% | Memory Usage: 83.1% (6235.2MB used)
+2026-03-13 09:07:42,661 - qwen_interactive - INFO - [run_qwen_interactive.py:222] - Metadata written to output\cloned_1773372429.json
+2026-03-13 09:07:42,819 - qwen_interactive - INFO - [run_qwen_interactive.py:237] - Validation report saved to output\cloned_1773372429_report.json

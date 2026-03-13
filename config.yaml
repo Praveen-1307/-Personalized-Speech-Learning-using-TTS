@@ -8,6 +8,7 @@ audio:
   normalization_level_db: -3
   noise_reduction_enabled: true
   silence_removal_enabled: true
+  speed_factor: 0.85
 
 # Feature Extraction
 features:
