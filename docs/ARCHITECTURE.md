@@ -40,6 +40,16 @@ graph TD
         InputLayer -->|Original Text| Val
         Val -->|Validation Status & Metrics| ReportOut[Validation Report .json]
     end
+
+    %% Styling with High Contrast (Dark backgrounds with white text)
+    classDef mainNode fill:#1a237e,stroke:#000051,color:#ffffff,stroke-width:2px;
+    classDef analysisNode fill:#e65100,stroke:#ac1900,color:#ffffff,stroke-width:2px;
+    classDef modelNode fill:#1b5e20,stroke:#003300,color:#ffffff,stroke-width:2px;
+    classDef outputNode fill:#4a148c,stroke:#12005e,color:#ffffff,stroke-width:2px;
+    
+    class Qwen,Prompt,Chunker,Sync,Adapter,Core mainNode;
+    class FE,ED,Profile,Analysis analysisNode;
+    class Data,WavOut,JsonOut,ReportOut,Val outputNode;
 ```
 
 ## Component Details

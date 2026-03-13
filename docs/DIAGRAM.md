@@ -39,14 +39,14 @@ graph TD
     WAV -->|File Creation| Meta[Metadata & Reports]
     Pitch & Emotion -->|Analysis JSON| Meta
 
-    %% Styling with High Contrast
-    classDef mainNode fill:#f0f7ff,stroke:#005bb7,stroke-width:2px;
-    classDef analysisNode fill:#fff8e1,stroke:#ff8f00,stroke-width:2px;
-    classDef modelNode fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
-    classDef outputNode fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px;
+    %% Styling with High Contrast (Dark backgrounds with white text)
+    classDef mainNode fill:#1a237e,stroke:#000051,color:#ffffff,stroke-width:2px;
+    classDef analysisNode fill:#e65100,stroke:#ac1900,color:#ffffff,stroke-width:2px;
+    classDef modelNode fill:#1b5e20,stroke:#003300,color:#ffffff,stroke-width:2px;
+    classDef outputNode fill:#4a148c,stroke:#12005e,color:#ffffff,stroke-width:2px;
     
-    class Engine,Base,Prompt,Embedding mainNode;
-    class FE,ED,Pitch,Emotion,PreProcessing analysisNode;
-    class Chunker,BatchOut,Reconstruction modelNode;
-    class WAV,Meta outputNode;
+    class Engine,Base,Prompt,Embedding,QTTS,Clone,Input,Rec mainNode;
+    class FE,ED,Pitch,Emotion,PreProcessing,Analysis,Profile analysisNode;
+    class Chunker,BatchOut,Reconstruction,Adapter,Sync modelNode;
+    class WAV,Meta,JsonOut,WavOut,ReportOut,Val outputNode;
 ```
