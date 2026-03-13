@@ -38,15 +38,4 @@ graph TD
     %% Output Metadata
     WAV -->|File Creation| Meta[Metadata & Reports]
     Pitch & Emotion -->|Analysis JSON| Meta
-
-    %% Styling with High Contrast (Dark backgrounds with white text)
-    classDef mainNode fill:#1a237e,stroke:#000051,color:#ffffff,stroke-width:2px;
-    classDef analysisNode fill:#e65100,stroke:#ac1900,color:#ffffff,stroke-width:2px;
-    classDef modelNode fill:#1b5e20,stroke:#003300,color:#ffffff,stroke-width:2px;
-    classDef outputNode fill:#4a148c,stroke:#12005e,color:#ffffff,stroke-width:2px;
-    
-    class Engine,Base,Prompt,Embedding,QTTS,Clone,Input,Rec mainNode;
-    class FE,ED,Pitch,Emotion,PreProcessing,Analysis,Profile analysisNode;
-    class Chunker,BatchOut,Reconstruction,Adapter,Sync modelNode;
-    class WAV,Meta,JsonOut,WavOut,ReportOut,Val outputNode;
 ```
