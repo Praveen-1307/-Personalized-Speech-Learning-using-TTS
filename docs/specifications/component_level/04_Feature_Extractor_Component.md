@@ -1,34 +1,23 @@
-# Component Specification: Feature Extractor (`feature_extractor.py`)
+# Component Specification: Feature Extractor (`personalization_engine/feature_extractor.py`)
 
-## 1. Overview
-The Feature Extractor is part of the Analysis Engine. Unlike the Emotion Detector (which predicts a psychological state), the Feature Extractor measures the strict *physical* properties of the voice. It computes pitch (how high/low), energy (how loud), and speaking rate (how fast) to create a mechanical "Voice Profile".
+## Overview
+This component measures the physical and acoustic traits of a recorded voice. It translates raw audio data into mathematical statistics representing pitch, loudness, speed, and timbre.
 
-## 2. Input Data & Structure
-| Input Name | Data Type | Description |
+## Input Data and Structure
+| Input | Type | Structure |
 | :--- | :--- | :--- |
-| `audio` | `np.ndarray` | A clean, 1-dimensional NumPy float array representing the audio wave. |
+| `audio` | `np.ndarray` | Sanitized 1D audio array. |\n| `sr` | `int` | Confirmed sampling rate. |
 
-## 3. High-Level Sequence of Execution
-1.  **Pitch Tracking (F0)**: Uses the `pyin` algorithm to track the fundamental pitch (Hz) of the speaker through time.
-2.  **Energy Profiling (RMS)**: Calculates the physical loudness (Root Mean Square energy) of every millisecond.
-3.  **Speaking Rate Estimation**: Slices the sound into non-silent segments to guess how many syllables are being spoken per second.
-4.  **Spectral Analysis**: Computes the "Spectral Centroid" and "Bandwidth", showing where the bulk of the audio frequencies live (e.g., bass-heavy vs. treble-heavy).
-5.  **Aggregation**: Takes the average (mean) and variance of all these tracks over time.
+## Sequence of Steps
+1. Perform F0 tracking algorithms (YIN/PYIN) to deduce fundamental frequency ranges.\n2. Calculate RMS matrix to map continuous volume energy levels.\n3. Estimate physical syllable counts analyzing energy oscillation peaks measuring speaking limits.\n4. Calculate spectral centroids dictating audio brightness vectors.\n5. Synthesize time-series arrays into flat absolute float variables.
 
-## 4. Internal Data Transformations
-*   **Time-Domain Array $\rightarrow$ Frequency-Domain Arrays**: The raw sound wave is translated into a set of frequency arrays using Fast Fourier Transforms (FFT).
-*   **Continuous Tracks $\rightarrow$ Statistical Summaries**: A continuous track of 1000 pitch values gets mathematically transformed into simple statistics like `mean_pitch`, `max_pitch`, and `min_pitch`.
+## Data Transformations
+- `1D Array -> 2D Matrix`: Extracts time-frequency frames via Fast Fourier Transform analysis.\n- `2D Matrix -> float`: Reduces dynamic multi-frame matrices into flat mean averages.
 
-## 5. Output Data & Structure
-| Output Name | Data Type | Description |
+## Output Data and Structure
+| Output | Type | Structure |
 | :--- | :--- | :--- |
-| `features` | `Dictionary` | A structured dictionary containing physical metrics. |
+| `profile_stats` | `dict` | Statistical dataset containing keys like 'f0_mean' and 'energy_std'. |
 
-Example structure of `features`:
-```json
-{
-  "prosodic": {"f0_mean": 120.5, "f0_range": 45.0, "energy_mean": 0.05},
-  "spectral": {"centroid_mean": 1500.2},
-  "speaking_pattern": {"articulation_rate": 4.5}
-}
-```
+## Notes
+- Pitch extraction via YIN/PYIN calculations are heavily resource intensive on extended clips.\n- Struggles structurally if polyphonic background noises conflict with harmonic measurements.

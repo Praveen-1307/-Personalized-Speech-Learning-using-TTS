@@ -1,4 +1,4 @@
-# Implementation Specification: Pattern Learner (`personalization_engine/pattern_learner.py`)
+# Component Specification: Pattern Learner (`personalization_engine/pattern_learner.py`)
 
 ## Overview
 This component learns reusable structure from extracted voice features. It converts nested feature dictionaries into fixed-length vectors, trains either a Gaussian Mixture Model or a small autoencoder, and generates profile-oriented outputs from the learned representation.

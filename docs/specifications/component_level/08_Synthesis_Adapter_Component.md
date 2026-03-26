@@ -1,4 +1,4 @@
-# Implementation Specification: Synthesis Adapter (`personalization_engine/synthesis_adapter.py`)
+# Component Specification: Synthesis Adapter (`personalization_engine/synthesis_adapter.py`)
 
 ## Overview
 This component serves as an execution wrapper managing baseline TTS engine logic (like Piper) providing basic integration endpoints and retrofitting missing cloning properties via external processes.

@@ -1,30 +1,23 @@
-# Component Specification: Qwen Adapter (`qwen_adapter.py`)
+# Component Specification: Qwen Adapter (`personalization_engine/qwen_adapter.py`)
 
-## 1. Overview
-The Qwen Adapter is the core synthesis wrapper component. It is responsible for bridging the gap between the application's data layer (text and user profiles) and the heavy deep learning model (`Qwen3-TTS`). Its primary responsibility is to take in target text and reference audio and return a seamless, voice-consistent audio waveform.
+## Overview
+This component serves as the core text-to-speech generation engine. It processes textual input alongside a reference speaker embedding to generate personalized, high-fidelity audio streams utilizing batched transformer inference.
 
-## 2. Input Data & Structure
-This component accepts three primary inputs:
-| Input Name | Data Type | Description |
+## Input Data and Structure
+| Input | Type | Structure |
 | :--- | :--- | :--- |
-| `model` | `Qwen3TTSModel` | The pre-loaded PyTorch neural network model object. |
-| `text` | `String` | The raw UTF-8 string that the user wants the system to say. |
-| `ref_audio_path` | `String` | The absolute file path to the user's reference `.wav` file on disk. |
-| `speed` (Optional) | `Float` | A multiplier for playback speed (e.g., `1.0` is normal, `1.2` is faster). |
+| `text` | `str` | The target text string to be synthesized. |\n| `reference_audio` | `np.ndarray` | Waveform of the speaker's voice used for zero-shot cloning. |\n| `speaker_embedding` | `np.ndarray` | Pre-computed x-vector representing the speaker profile. |\n| `batch_size` | `int` | Number of text chunks to process concurrently. |
 
-## 3. High-Level Sequence of Execution
-1.  **Validation**: Verify the reference audio file actually exists on the disk.
-2.  **Text Chunking**: The input string is broken into an array of smaller string sentences (max 1200 chars).
-3.  **Prompt Extraction**: The component calls the model to analyze the reference `.wav` and extract a singular voice embedding (`x-vector`).
-4.  **Batched Inference**: The component feeds the entire array of text chunks AND the singular voice embedding to the model simultaneously.
-5.  **Output Reconstruction**: The component stitches together the returned audio pieces into a single file and applies optional speed adjustments.
+## Sequence of Steps
+1. Initialize the Qwen3-TTS model weights into VRAM.\n2. Compute or load the mathematical speaker embedding from the reference audio.\n3. Chunk the target text string based on semantic punctuation boundaries.\n4. Execute batched inference on all text chunks using the same speaker embedding.\n5. Concatenate the output waveform tensors into a continuous audio stream.
 
-## 4. Internal Data Transformations
-*   **String $\rightarrow$ List[String]**: The raw text string is transformed into a list of strings via regex (`split_text_into_chunks`).
-*   **Audio $\rightarrow$ Vector**: The physical `.wav` file is transformed into a dense mathematical tensor (`x-vector`) representing the speaker's vocal characteristics.
+## Data Transformations
+- `str -> list[str]`: Target paragraph is split into sentence chunks.\n- `np.ndarray -> np.ndarray`: Audio waveform is compressed into a fixed-length speaker embedding vector.\n- `str + np.ndarray -> np.ndarray`: Text chunks and speaker embedding generate raw audio tensors.
 
-## 5. Output Data & Structure
-| Output Name | Data Type | Description |
+## Output Data and Structure
+| Output | Type | Structure |
 | :--- | :--- | :--- |
-| `output_path` | `String` | The absolute file path to the newly generated `.wav` file (e.g., `output/cloned_12345.wav`). |
-| `(Internal)` | `np.ndarray` | Before saving, the audio exists as a 1D NumPy float array (Concatenated PCM). |
+| `waveform` | `np.ndarray` | 1D float array of the synthesized audio. |\n| `sample_rate` | `int` | The sampling rate of the generated audio (e.g., 22050). |
+
+## Notes
+- Heavy VRAM utilization; batching strategy is critical to avoid out-of-memory errors.\n- Requires proper punctuation in the text for successful chunking.\n- Temperature is strictly set to lock the voice variance for consistency.

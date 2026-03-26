@@ -1,29 +1,23 @@
-# Component Specification: Emotion Detector (`emotion_detector.py`)
+# Component Specification: Emotion Detector (`personalization_engine/emotion_detector.py`)
 
-## 1. Overview
-The Emotion Detector acts as the cognitive layer of the Analysis Engine. Its purpose is to predict the emotional state of a user's voice based on a short audio recording. This is a crucial component for ensuring the synthesized speech matches the natural "vibe" of the original speaker, rather than sounding robotic.
+## Overview
+This component acts as an acoustic classifier. It extracts high-level spectral and prosodic features from audio to predict the speaker's emotional state, outputting categorical labels such as 'happy' or 'angry'.
 
-## 2. Input Data & Structure
-| Input Name | Data Type | Description |
+## Input Data and Structure
+| Input | Type | Structure |
 | :--- | :--- | :--- |
-| `audio` | `np.ndarray` | A 1-dimensional NumPy array of the loaded `.wav` audio signal. |
-| `sr` | `Integer` | The original Sample Rate of the audio in Hz (e.g., `16000` or `22050`). |
+| `audio` | `np.ndarray` | 1D numpy array of the audio waveform. |\n| `sr` | `int` | The audio sampling rate in Hz. |
 
-## 3. High-Level Sequence of Execution
-1.  **Model Loading**: The component attempts to load a pre-trained `scikit-learn` Support Vector Machine (SVM) from the local disk (`models/emotion/svm_model.pkl`).
-2.  **Audio Ingestion**: The component receives the audio waveform data (loaded using the `librosa` library).
-3.  **Feature Extraction**: The detector runs intense mathematical operations to extract **5 Core Features** (Pitch, Loudness, Spectral Shape, MFCC Texture, Zero-Crossing Rate).
-4.  **Prediction**: The combined feature logic is fed through the SVM model to retrieve the most likely emotional classification.
-5.  **Output Generation**: The component returns an easy-to-read dictionary containing the predicted emotion string and its percentage confidence.
+## Sequence of Steps
+1. Check if an active SVM or RandomForest model is trained and loaded.\n2. Extract 5 core acoustic features (Pitch, RMS Energy, Spectral Centroid, MFCCs, ZCR) if the model is active.\n3. Normalize the extracted features using a pre-fitted StandardScaler.\n4. Feed the scaled features into the machine learning classifier.\n5. Map the output predictions back to string labels and return a confidence dictionary.
 
-## 4. Internal Data Transformations
-*   **Audio $\rightarrow$ Features**: The physical `.wav` file is transformed into mathematical arrays.
-*   **Features $\rightarrow$ Vector**: Those raw numbers are normalized and combined into a flattened 1D feature vector array that the machine learning model can understand.
-*   **Vector $\rightarrow$ String**: The ML model predicts an integer associated with a string label (e.g., `0 = Angry`, `3 = Happy`).
+## Data Transformations
+- `np.ndarray -> np.ndarray`: Audio sequence is abstracted into a condensed 1D array of statistical feature means.\n- `np.ndarray -> scaled matrix`: The feature array normalizes against global dataset distributions using Z-scores.\n- `scaled matrix -> dict`: Class probabilities are formatted into an easily digestible dictionary.
 
-## 5. Output Data & Structure
-| Output Name | Data Type | Description |
+## Output Data and Structure
+| Output | Type | Structure |
 | :--- | :--- | :--- |
-| `emotion` | `String` | The predicted core emotion (e.g., `'neutral', 'happy', 'sad', 'angry'`). |
-| `confidence` | `Float` | The probability score between 0.0 and 1.0 that the prediction is correct. |
-| `(Internal)` | `Dictionary` | The returned data contains raw technical numbers alongside the prediction for use in logging. |
+| `emotion` | `str` | The core predicted emotion label (e.g., 'neutral'). |\n| `confidence` | `float` | Score representing the model's certainty (0.0 to 1.0). |\n| `probabilities` | `dict` | Key-value pairs mapping all possible emotions to their respective probabilities. |
+
+## Notes
+- By default, the detector acts as a passive mock, defaulting to 'neutral' with a 100% confidence fallback unless explicitly trained.\n- Relies heavily on acoustic data rather than semantic text meaning.

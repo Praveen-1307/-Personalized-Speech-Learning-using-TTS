@@ -1,41 +1,23 @@
-# Implementation Specification: Qwen Adapter (`qwen_adapter.py`)
+# Implementation Specification: Qwen Adapter (`personalization_engine/qwen_adapter.py`)
 
-## 1. Overview
-The Qwen Adapter is the "Voice Cloning Engine." It is the most important script in the codebase because it takes the user's text and physically generates the cloned audio file using Artificial Intelligence.
+## Overview
+This component serves as the core text-to-speech generation engine. It processes textual input alongside a reference speaker embedding to generate personalized, high-fidelity audio streams utilizing batched transformer inference.
 
-## 2. The Problem It Solves
-If you make an AI read a massive paragraph, it usually sounds robotic, changes its accent halfway through, and runs out of graphics card memory (crashing the computer).
+## Input Data and Structure
+| Input | Type | Structure |
+| :--- | :--- | :--- |
+| `text` | `str` | The target text string to be synthesized. |\n| `reference_audio` | `np.ndarray` | Waveform of the speaker's voice used for zero-shot cloning. |\n| `speaker_embedding` | `np.ndarray` | Pre-computed x-vector representing the speaker profile. |\n| `batch_size` | `int` | Number of text chunks to process concurrently. |
 
-## 3. How It Works in the Code 
-1. **Smart Text Cutting:** First, it cuts the huge paragraph into small sentences (chunks) whenever it finds a period `.` or exclamation mark `!`. It never tries to generate a full essay at once.
-2. **The "Voice Fingerprint" Trick:** Normally, an AI would loop through those small sentences one by one. Our code does *not* do that. It extracts a single "Voice Fingerprint" (a mathematical x-vector) from the user's audio file just once.
-3. **Batched Inference (The Magic):** It takes *all* the cut-up sentences, attaches that exact same Single Voice Fingerprint to every single one, and feeds them into the AI at the exact same moment. 
-4. **Strict Rules:** We set the AI's `temperature=0.1`. This is a mathematical rule that forces the AI to be extremely strict and not get "creative." This absolutely forces the voice to NEVER change its tone or accent, resulting in perfect, consistent audio from start to finish.
-5. **Reconstruction:** It seamlessly glues the small audio sentences back together into one final `.wav` file.
+## Sequence of Steps
+1. Initialize the Qwen3-TTS model weights into VRAM.\n2. Compute or load the mathematical speaker embedding from the reference audio.\n3. Chunk the target text string based on semantic punctuation boundaries.\n4. Execute batched inference on all text chunks using the same speaker embedding.\n5. Concatenate the output waveform tensors into a continuous audio stream.
 
-## 4. Technical Architecture
+## Data Transformations
+- `str -> list[str]`: Target paragraph is split into sentence chunks.\n- `np.ndarray -> np.ndarray`: Audio waveform is compressed into a fixed-length speaker embedding vector.\n- `str + np.ndarray -> np.ndarray`: Text chunks and speaker embedding generate raw audio tensors.
 
-### 4.1 Inputs
-- **Text:** The target string to be synthesized.
-- **Reference Audio:** A primary `.wav` sample of the speaker to clone.
-- **Configuration Defaults:** Batch size, temperature, and repetition penalties.
+## Output Data and Structure
+| Output | Type | Structure |
+| :--- | :--- | :--- |
+| `waveform` | `np.ndarray` | 1D float array of the synthesized audio. |\n| `sample_rate` | `int` | The sampling rate of the generated audio (e.g., 22050). |
 
-### 4.2 Execution Flow
-1. Load Qwen3-TTS model weights into memory.
-2. Pre-compute the `x-vector` speaker embedding from the reference audio.
-3. Split the target string into semantically safe text chunks.
-4. Process chunk arrays in parallel via batched model inference.
-5. Post-process and concatenate resulting tensors into continuous audio.
-
-### 4.3 Data Transformations
-- **String to Tensor:** Converts UTF-8 text into linguistic embedding tensors.
-- **Audio to X-Vector:** Compresses reference audio into fixed-length speaker representation vectors.
-- **Tensor to Waveform:** Converts the model's generated latent space tensors back to raw PCM float arrays.
-
-### 4.4 Outputs
-- **Waveform Data:** A merged 1D numpy array representing the synthesized audio.
-- **Sample Rate:** Standardized sampling rate (e.g., 22050Hz).
-
-### 4.5 Current Limitations
-- **High Resource Cost:** Requires substantial VRAM for batched transformer inference.
-- **Punctuation Reliance:** Chunking logic fails if a very long text block lacks proper punctuation, risking out-of-memory errors.
+## Notes
+- Heavy VRAM utilization; batching strategy is critical to avoid out-of-memory errors.\n- Requires proper punctuation in the text for successful chunking.\n- Temperature is strictly set to lock the voice variance for consistency.

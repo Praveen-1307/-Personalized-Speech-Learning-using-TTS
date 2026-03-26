@@ -1,4 +1,4 @@
-# Implementation Specification: Command Line Interface (`personalization_engine/cli.py`)
+# Component Specification: Command Line Interface (`personalization_engine/cli.py`)
 
 ## Overview
 The CLI component acts as a direct, interactive terminal gateway. It provisions rapid console commands for developers utilizing the Click and Rich libraries bypassing HTTP protocols.
