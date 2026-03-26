@@ -68,14 +68,7 @@ logging:
   log_format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
   performance_logging: true
 
-# API Server
-api:
-  enabled: true
-  host: "0.0.0.0"
-  port: 8000
-  workers: 4
-  cors_enabled: true
-  rate_limit: "100/minute"
+
 
 # CLI Interface
 cli:
